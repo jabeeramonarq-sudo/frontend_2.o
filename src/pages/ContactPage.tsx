@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Layout } from "@/components/layout/Layout";
+import { SEO } from "@/components/shared/SEO";
 import { AnimatedSection } from "@/components/shared/AnimatedSection";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -60,6 +61,10 @@ export default function ContactPage() {
 
   return (
     <Layout>
+      <SEO
+        title="Contact Us"
+        description="Get in touch with Amonarq to learn more about Mynxt, request early access, or discuss business opportunities."
+      />
       {/* Hero */}
       <section className="py-20 md:py-32 relative overflow-hidden">
         <div className="absolute inset-0 pattern-overlay opacity-30" />
@@ -87,7 +92,7 @@ export default function ContactPage() {
               </h2>
               <p className="text-muted-foreground mb-8">
                 Have a question about Mynxt, interested in early access, or want to learn
-                more about amonarq? We'd love to hear from you.
+                more about Amonarq? We'd love to hear from you.
               </p>
 
               <div className="space-y-6">
@@ -97,12 +102,12 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-foreground mb-1">Email</h3>
-                    <a href="mailto:contact@amonarq.com" className="text-muted-foreground hover:text-primary transition-colors">
-                      contact@amonarq.com
+                    <a href="mailto:contact@Amonarq.com" className="text-muted-foreground hover:text-primary transition-colors">
+                      contact@Amonarq.com
                     </a>
                     <br />
-                    <a href="mailto:business@amonarq.com" className="text-muted-foreground hover:text-primary transition-colors">
-                      business@amonarq.com
+                    <a href="mailto:business@Amonarq.com" className="text-muted-foreground hover:text-primary transition-colors">
+                      business@Amonarq.com
                     </a>
                   </div>
                 </div>

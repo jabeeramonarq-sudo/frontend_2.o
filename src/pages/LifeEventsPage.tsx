@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Layout } from "@/components/layout/Layout";
+import { SEO } from "@/components/shared/SEO";
 import { AnimatedSection } from "@/components/shared/AnimatedSection";
 import { Button } from "@/components/ui/button";
 import { FileText, Users, Settings, Eye, Shield, Heart, ArrowRight } from "lucide-react";
@@ -7,6 +8,10 @@ import { FileText, Users, Settings, Eye, Shield, Heart, ArrowRight } from "lucid
 export default function LifeEventsPage() {
   return (
     <Layout>
+      <SEO
+        title="Life Events"
+        description="A Life Event is a structured way to organise specific areas of life responsibility, information, and people."
+      />
       {/* Hero */}
       <section className="py-20 md:py-32 relative overflow-hidden">
         <div className="absolute inset-0 pattern-overlay opacity-30" />

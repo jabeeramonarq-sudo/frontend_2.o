@@ -1,4 +1,5 @@
 import { Layout } from "@/components/layout/Layout";
+import { SEO } from "@/components/shared/SEO";
 import { AnimatedSection } from "@/components/shared/AnimatedSection";
 import { Button } from "@/components/ui/button";
 import {
@@ -16,6 +17,10 @@ import { Link } from "react-router-dom";
 export default function ProductPage() {
     return (
         <Layout>
+            <SEO
+                title="Mynxt - Life's Continuity Companion"
+                description="Mynxt by Amonarq is your personal continuity companion. Organise important information, set execution rules, and ensure your loved ones are supported."
+            />
             {/* Hero Section - Refined Proportions */}
             <section className="relative pt-24 pb-16 md:pt-32 md:pb-24 overflow-hidden">
                 {/* Dynamic Background Elements */}
@@ -47,7 +52,7 @@ export default function ProductPage() {
                                 </h1>
 
                                 <p className="text-base md:text-xl text-muted-foreground max-w-xl mx-auto mb-10 leading-relaxed font-light">
-                                    Mynxt is a premium continuity platform by <span className="text-foreground font-medium">amonarq</span>.
+                                    Mynxt is a premium continuity platform by <span className="text-foreground font-medium">Amonarq</span>.
                                     Protect your intent, organise your responsibilities, and bridge the gap between today and tomorrow.
                                 </p>
 

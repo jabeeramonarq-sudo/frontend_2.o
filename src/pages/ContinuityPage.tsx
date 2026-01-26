@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Layout } from "@/components/layout/Layout";
+import { SEO } from "@/components/shared/SEO";
 import { AnimatedSection } from "@/components/shared/AnimatedSection";
 import { Button } from "@/components/ui/button";
 import { Clock, Shield, AlertCircle, ArrowRight, Lock, CheckCircle } from "lucide-react";
@@ -7,6 +8,10 @@ import { Clock, Shield, AlertCircle, ArrowRight, Lock, CheckCircle } from "lucid
 export default function ContinuityPage() {
   return (
     <Layout>
+      <SEO
+        title="Continuity & Triggers"
+        description="Learn how Mynxt ensures responsibilities don't get stuck through smart continuity checks and predefined triggers."
+      />
       {/* Hero */}
       <section className="py-20 md:py-32 relative overflow-hidden">
         <div className="absolute inset-0 pattern-overlay opacity-30" />

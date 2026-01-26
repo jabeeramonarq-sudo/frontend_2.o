@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { AnimatedSection } from "@/components/shared/AnimatedSection";
 import { Layout } from "@/components/layout/Layout";
+import { SEO } from "@/components/shared/SEO";
 import { MynxtLogo } from "@/components/brand/AmonarqLogo";
 import {
   FolderOpen, Users, Shield, Clock, CheckCircle, XCircle,
@@ -12,6 +13,10 @@ import heroImage from "@/assets/hero-abstract.jpg";
 export default function HomePage() {
   return (
     <Layout>
+      <SEO
+        title="Home"
+        description="Amonarq builds digital products focused on reducing chaos, protecting trust, and enabling uninterrupted human flow. Mynxt ensures your life responsibilities are handled smoothly."
+      />
       {/* Section 1: Hero */}
       <section className="relative min-h-[90vh] flex items-center overflow-hidden">
         <div

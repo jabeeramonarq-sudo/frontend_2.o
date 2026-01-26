@@ -13,7 +13,7 @@ import AboutPage from "./pages/AboutPage";
 import ContactPage from "./pages/ContactPage";
 import PrivacyPolicyPage from "./pages/PrivacyPolicyPage";
 import TermsOfServicePage from "./pages/TermsOfServicePage";
-import ProductPage from "./pages/ProductPage";
+import ProductPage from "@/pages/ProductPage";
 import NotFound from "./pages/NotFound";
 import { ScrollToTop } from "./components/shared/ScrollToTop";
 

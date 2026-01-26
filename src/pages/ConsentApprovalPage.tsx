@@ -1,10 +1,15 @@
 import { Layout } from "@/components/layout/Layout";
+import { SEO } from "@/components/shared/SEO";
 import { AnimatedSection } from "@/components/shared/AnimatedSection";
 import { UserCheck, Lock, FileCheck, Shield, CheckCircle, Heart } from "lucide-react";
 
 export default function ConsentApprovalPage() {
     return (
         <Layout>
+            <SEO
+                title="Consent & Approval"
+                description="Mynxt builds trust through explicit authorization, clear intent, and a robust consent framework."
+            />
             {/* Hero / Header Section */}
             <section className="py-20 md:py-32 relative overflow-hidden">
                 <div className="container relative mx-auto px-4 md:px-6">

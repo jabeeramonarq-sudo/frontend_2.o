@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Layout } from "@/components/layout/Layout";
+import { SEO } from "@/components/shared/SEO";
 import { AnimatedSection } from "@/components/shared/AnimatedSection";
 import { Button } from "@/components/ui/button";
 import {
@@ -43,6 +44,10 @@ const steps = [
 export default function HowItWorksPage() {
   return (
     <Layout>
+      <SEO
+        title="How It Works"
+        description="Learn how Mynxt works through a simple flow to organise, protect, and ensure continuity for your life responsibilities."
+      />
       {/* Hero */}
       <section className="py-20 md:py-32 relative overflow-hidden">
         <div className="absolute inset-0 pattern-overlay opacity-30" />

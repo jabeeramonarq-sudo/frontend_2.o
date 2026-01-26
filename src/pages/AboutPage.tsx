@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Layout } from "@/components/layout/Layout";
+import { SEO } from "@/components/shared/SEO";
 import { AnimatedSection } from "@/components/shared/AnimatedSection";
 import { Button } from "@/components/ui/button";
 import { AmonarqLogo } from "@/components/brand/AmonarqLogo";
@@ -8,6 +9,10 @@ import { Eye, Heart, Shield, Target, ArrowRight } from "lucide-react";
 export default function AboutPage() {
   return (
     <Layout>
+      <SEO
+        title="About Amonarq"
+        description="Amonarq builds systems focused on life continuity. We believe technology should reduce chaos, respect intent, and support people during critical moments."
+      />
       {/* Hero */}
       <section className="py-20 md:py-32 relative overflow-hidden">
         <div className="absolute inset-0 pattern-overlay opacity-30" />
@@ -38,7 +43,7 @@ export default function AboutPage() {
 
             <div className="bg-card border border-border/50 rounded-2xl p-8 md:p-10 text-center">
               <p className="text-muted-foreground text-lg mb-6">
-                amonarq is building systems focused on life continuity.
+                Amonarq is building systems focused on life continuity.
               </p>
               <p className="text-foreground">
                 We believe technology should reduce chaos, respect intent,
@@ -101,7 +106,7 @@ export default function AboutPage() {
         <div className="container mx-auto px-4 md:px-6">
           <AnimatedSection className="max-w-2xl mx-auto text-center">
             <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-6">
-              amonarq Systems Private Limited
+              Amonarq Systems Private Limited
             </h2>
             <address className="text-muted-foreground not-italic mb-8">
               4-578 & Row House, Prasanth Nagar,<br />

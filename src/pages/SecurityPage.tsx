@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Layout } from "@/components/layout/Layout";
+import { SEO } from "@/components/shared/SEO";
 import { AnimatedSection } from "@/components/shared/AnimatedSection";
 import { Button } from "@/components/ui/button";
 import { Shield, Lock, Eye, FileCheck, ArrowRight } from "lucide-react";
@@ -7,6 +8,10 @@ import { Shield, Lock, Eye, FileCheck, ArrowRight } from "lucide-react";
 export default function SecurityPage() {
   return (
     <Layout>
+      <SEO
+        title="Security & Trust"
+        description="Mynxt is built with responsibility at its foundation, ensuring your data is protected and your intentions are respected."
+      />
       {/* Hero */}
       <section className="py-20 md:py-32 relative overflow-hidden">
         <div className="absolute inset-0 pattern-overlay opacity-30" />
@@ -125,7 +130,7 @@ export default function SecurityPage() {
                 </Link>
               </Button>
               <Button variant="heroOutline" size="lg" asChild>
-                <Link to="/about">About amonarq</Link>
+                <Link to="/about">About Amonarq</Link>
               </Button>
             </div>
           </AnimatedSection>

@@ -1,4 +1,5 @@
 import { Layout } from "@/components/layout/Layout";
+import { SEO } from "@/components/shared/SEO";
 import { AnimatedSection } from "@/components/shared/AnimatedSection";
 
 export default function PrivacyPolicyPage() {
@@ -10,6 +11,10 @@ export default function PrivacyPolicyPage() {
 
     return (
         <Layout>
+            <SEO
+                title="Privacy Policy"
+                description="Our Privacy Policy explains how we collect, use, store, and protect information when you use Mynxt."
+            />
             <section className="py-20 md:py-32">
                 <div className="container mx-auto px-4 md:px-6">
                     <AnimatedSection className="max-w-4xl mx-auto">
@@ -17,13 +22,13 @@ export default function PrivacyPolicyPage() {
                             Privacy Policy
                         </h1>
                         <p className="text-muted-foreground mb-8">
-                            amonarq / Mynxt | Last updated: {lastUpdated}
+                            Amonarq / Mynxt | Last updated: {lastUpdated}
                         </p>
 
                         <div className="prose prose-invert max-w-none space-y-12 text-muted-foreground leading-relaxed">
                             <section>
                                 <p>
-                                    amonarq (“we”, “our”, “us”) operates the Mynxt platform. This Privacy Policy explains how we collect, use, store, and protect information when you use Mynxt.
+                                    Amonarq (“we”, “our”, “us”) operates the Mynxt platform. This Privacy Policy explains how we collect, use, store, and protect information when you use Mynxt.
                                 </p>
                             </section>
 
@@ -151,8 +156,8 @@ export default function PrivacyPolicyPage() {
                                 <h2 className="text-2xl font-semibold text-foreground mb-6">10. Contact</h2>
                                 <p className="mb-4">For privacy-related questions:</p>
                                 <div className="flex flex-col space-y-2">
-                                    <a href="mailto:contact@amonarq.com" className="text-primary hover:underline">
-                                        📧 contact@amonarq.com
+                                    <a href="mailto:contact@Amonarq.com" className="text-primary hover:underline">
+                                        📧 contact@Amonarq.com
                                     </a>
                                     <p>📍 India</p>
                                 </div>

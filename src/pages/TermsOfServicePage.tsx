@@ -1,4 +1,5 @@
 import { Layout } from "@/components/layout/Layout";
+import { SEO } from "@/components/shared/SEO";
 import { AnimatedSection } from "@/components/shared/AnimatedSection";
 
 export default function TermsOfServicePage() {
@@ -6,6 +7,10 @@ export default function TermsOfServicePage() {
 
     return (
         <Layout>
+            <SEO
+                title="Terms of Service"
+                description="These Terms govern the use of Mynxt, a continuity execution platform operated by amonarq."
+            />
             <section className="py-20 md:py-32">
                 <div className="container mx-auto px-4 md:px-6">
                     <AnimatedSection className="max-w-4xl mx-auto">
@@ -13,13 +18,13 @@ export default function TermsOfServicePage() {
                             Terms of Service
                         </h1>
                         <p className="text-muted-foreground mb-8">
-                            amonarq / Mynxt | Last updated: {lastUpdated}
+                            Amonarq / Mynxt | Last updated: {lastUpdated}
                         </p>
 
                         <div className="prose prose-invert max-w-none space-y-12 text-muted-foreground leading-relaxed">
                             <section>
                                 <p>
-                                    These Terms govern the use of Mynxt, a continuity execution platform operated by amonarq. By accessing or using Mynxt, you agree to these Terms.
+                                    These Terms govern the use of Mynxt, a continuity execution platform operated by Amonarq. By accessing or using Mynxt, you agree to these Terms.
                                 </p>
                             </section>
 
@@ -49,7 +54,7 @@ export default function TermsOfServicePage() {
                                     <li>Selecting trusted individuals or heirs</li>
                                 </ul>
                                 <p className="mt-6 font-medium text-warning">
-                                    amonarq does not verify the legal validity of user instructions.
+                                    Amonarq does not verify the legal validity of user instructions.
                                 </p>
                             </section>
 
@@ -100,7 +105,7 @@ export default function TermsOfServicePage() {
                                 <h2 className="text-2xl font-semibold text-foreground mb-6">7. Limitation of Liability</h2>
                                 <p className="mb-4">To the maximum extent permitted by law:</p>
                                 <ul className="list-disc pl-5 space-y-2">
-                                    <li>amonarq shall not be liable for indirect or consequential damages</li>
+                                    <li>Amonarq shall not be liable for indirect or consequential damages</li>
                                     <li>Use of Mynxt is at the user’s own risk</li>
                                 </ul>
                             </section>
@@ -132,8 +137,8 @@ export default function TermsOfServicePage() {
                                 <h2 className="text-2xl font-semibold text-foreground mb-6">10. Contact</h2>
                                 <p className="mb-4">For questions regarding these Terms:</p>
                                 <div className="flex flex-col space-y-2">
-                                    <a href="mailto:contact@amonarq.com" className="text-primary hover:underline">
-                                        📧 contact@amonarq.com
+                                    <a href="mailto:contact@Amonarq.com" className="text-primary hover:underline">
+                                        📧 contact@Amonarq.com
                                     </a>
                                 </div>
                             </section>
