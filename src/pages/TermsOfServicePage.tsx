@@ -13,13 +13,13 @@ export default function TermsOfServicePage() {
                             Terms of Service
                         </h1>
                         <p className="text-muted-foreground mb-8">
-                            AMONARQ / MYNXT | Last updated: {lastUpdated}
+                            amonarq / Mynxt | Last updated: {lastUpdated}
                         </p>
 
                         <div className="prose prose-invert max-w-none space-y-12 text-muted-foreground leading-relaxed">
                             <section>
                                 <p>
-                                    These Terms govern the use of MYNXT, a continuity execution platform operated by AMONARQ. By accessing or using MYNXT, you agree to these Terms.
+                                    These Terms govern the use of Mynxt, a continuity execution platform operated by amonarq. By accessing or using Mynxt, you agree to these Terms.
                                 </p>
                             </section>
 
@@ -27,14 +27,14 @@ export default function TermsOfServicePage() {
 
                             <section>
                                 <h2 className="text-2xl font-semibold text-foreground mb-6">1. Nature of the Service</h2>
-                                <p className="mb-4">MYNXT is a continuity execution platform, not:</p>
+                                <p className="mb-4">Mynxt is a continuity execution platform, not:</p>
                                 <ul className="list-disc pl-5 space-y-2">
                                     <li>A digital locker or vault</li>
                                     <li>A password manager</li>
                                     <li>A legal advisory or decision-making service</li>
                                 </ul>
                                 <p className="mt-4">
-                                    MYNXT enables users to define rules and instructions that may be executed under specific conditions.
+                                    Mynxt enables users to define rules and instructions that may be executed under specific conditions.
                                 </p>
                             </section>
 
@@ -49,7 +49,7 @@ export default function TermsOfServicePage() {
                                     <li>Selecting trusted individuals or heirs</li>
                                 </ul>
                                 <p className="mt-6 font-medium text-warning">
-                                    AMONARQ does not verify the legal validity of user instructions.
+                                    amonarq does not verify the legal validity of user instructions.
                                 </p>
                             </section>
 
@@ -57,7 +57,7 @@ export default function TermsOfServicePage() {
 
                             <section>
                                 <h2 className="text-2xl font-semibold text-foreground mb-6">3. No Guaranteed Outcomes</h2>
-                                <p className="mb-4">MYNXT facilitates execution workflows but:</p>
+                                <p className="mb-4">Mynxt facilitates execution workflows but:</p>
                                 <ul className="list-disc pl-5 space-y-2">
                                     <li>Does not guarantee legal enforceability</li>
                                     <li>Does not replace wills, legal documents, or professional advice</li>
@@ -100,8 +100,8 @@ export default function TermsOfServicePage() {
                                 <h2 className="text-2xl font-semibold text-foreground mb-6">7. Limitation of Liability</h2>
                                 <p className="mb-4">To the maximum extent permitted by law:</p>
                                 <ul className="list-disc pl-5 space-y-2">
-                                    <li>AMONARQ shall not be liable for indirect or consequential damages</li>
-                                    <li>Use of MYNXT is at the user’s own risk</li>
+                                    <li>amonarq shall not be liable for indirect or consequential damages</li>
+                                    <li>Use of Mynxt is at the user’s own risk</li>
                                 </ul>
                             </section>
 

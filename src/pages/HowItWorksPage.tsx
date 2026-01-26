@@ -2,9 +2,9 @@ import { Link } from "react-router-dom";
 import { Layout } from "@/components/layout/Layout";
 import { AnimatedSection } from "@/components/shared/AnimatedSection";
 import { Button } from "@/components/ui/button";
-import { 
-  FolderOpen, Users, Settings, Shield, PlayCircle, 
-  ArrowRight, ChevronRight 
+import {
+  FolderOpen, Users, Settings, Shield, PlayCircle,
+  ArrowRight, ChevronRight
 } from "lucide-react";
 
 const steps = [
@@ -46,11 +46,11 @@ export default function HowItWorksPage() {
       {/* Hero */}
       <section className="py-20 md:py-32 relative overflow-hidden">
         <div className="absolute inset-0 pattern-overlay opacity-30" />
-        
+
         <div className="container relative mx-auto px-4 md:px-6">
           <AnimatedSection className="max-w-3xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
-              How MYNXT Works
+              How Mynxt Works
             </h1>
             <p className="text-xl text-muted-foreground font-light">
               A simple flow to organise, protect, and ensure continuity.
@@ -103,7 +103,7 @@ export default function HowItWorksPage() {
               Ready to organise your life responsibilities?
             </h2>
             <p className="text-muted-foreground mb-8">
-              Request early access to be among the first to experience MYNXT.
+              Request early access to be among the first to experience Mynxt.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Button variant="hero" size="lg" asChild>

@@ -10,7 +10,7 @@ export default function SecurityPage() {
       {/* Hero */}
       <section className="py-20 md:py-32 relative overflow-hidden">
         <div className="absolute inset-0 pattern-overlay opacity-30" />
-        
+
         <div className="container relative mx-auto px-4 md:px-6">
           <AnimatedSection className="max-w-3xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
@@ -32,13 +32,13 @@ export default function SecurityPage() {
                 <Shield className="h-10 w-10 text-primary" />
               </div>
             </div>
-            
+
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-8 text-center">
               Our Approach
             </h2>
-            
+
             <p className="text-muted-foreground text-lg text-center mb-12">
-              MYNXT is built with security and responsibility at its foundation.
+              Mynxt is built with security and responsibility at its foundation.
             </p>
 
             <div className="grid sm:grid-cols-2 gap-6">
@@ -94,9 +94,9 @@ export default function SecurityPage() {
               Our Commitment
             </h2>
             <p className="text-muted-foreground text-lg mb-8">
-              Trust isn't claimed—it's earned. We're committed to transparent practices, 
-              robust security, and respecting your privacy at every step. When you use 
-              MYNXT, you can be confident that your data is protected and your intentions 
+              Trust isn't claimed—it's earned. We're committed to transparent practices,
+              robust security, and respecting your privacy at every step. When you use
+              Mynxt, you can be confident that your data is protected and your intentions
               are respected.
             </p>
             <div className="inline-flex items-center gap-2 text-sm text-muted-foreground/70 bg-muted/30 px-4 py-2 rounded-full">
@@ -115,7 +115,7 @@ export default function SecurityPage() {
               Ready to learn more?
             </h2>
             <p className="text-muted-foreground mb-8">
-              Get in touch to learn more about MYNXT or request early access.
+              Get in touch to learn more about Mynxt or request early access.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Button variant="hero" size="lg" asChild>
@@ -125,7 +125,7 @@ export default function SecurityPage() {
                 </Link>
               </Button>
               <Button variant="heroOutline" size="lg" asChild>
-                <Link to="/about">About Amonarq</Link>
+                <Link to="/about">About amonarq</Link>
               </Button>
             </div>
           </AnimatedSection>

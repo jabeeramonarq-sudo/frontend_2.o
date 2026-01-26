@@ -11,11 +11,11 @@ export function Footer() {
             <AmonarqLogo className="h-8 w-auto mb-4" />
             <p className="text-muted-foreground text-sm max-w-md mb-4">
               Organise life responsibilities today and ensure they are handled
-              smoothly when you're unavailable. MYNXT is a continuity-first
-              digital product by Amonarq.
+              smoothly when you're unavailable. Mynxt is a continuity-first
+              digital product by amonarq.
             </p>
             <p className="text-muted-foreground/60 text-xs">
-              Amonarq Systems Private Limited
+              amonarq Systems Private Limited
             </p>
           </div>
 
@@ -23,6 +23,11 @@ export function Footer() {
           <div>
             <h4 className="font-semibold text-foreground mb-4">Quick Links</h4>
             <ul className="space-y-2">
+              <li>
+                <Link to="/product" className="text-muted-foreground hover:text-primary transition-colors text-sm">
+                  Product
+                </Link>
+              </li>
               <li>
                 <Link to="/how-it-works" className="text-muted-foreground hover:text-primary transition-colors text-sm">
                   How It Works
@@ -57,7 +62,7 @@ export function Footer() {
             <ul className="space-y-2 text-sm">
               <li>
                 <Link to="/about" className="text-muted-foreground hover:text-primary transition-colors">
-                  About Amonarq
+                  About amonarq
                 </Link>
               </li>
               <li>
@@ -83,7 +88,7 @@ export function Footer() {
 
         <div className="mt-12 pt-8 border-t border-border/30 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-muted-foreground/60 text-xs">
-            © {new Date().getFullYear()} Amonarq Systems Private Limited. All rights reserved.
+            © {new Date().getFullYear()} amonarq Systems Private Limited. All rights reserved.
           </p>
           <div className="flex items-center gap-6">
             <Link to="/privacy" className="text-muted-foreground/60 hover:text-muted-foreground text-xs transition-colors">

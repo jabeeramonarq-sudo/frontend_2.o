@@ -11,7 +11,7 @@ export default function AboutPage() {
       {/* Hero */}
       <section className="py-20 md:py-32 relative overflow-hidden">
         <div className="absolute inset-0 pattern-overlay opacity-30" />
-        
+
         <div className="container relative mx-auto px-4 md:px-6">
           <AnimatedSection className="max-w-3xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
@@ -31,17 +31,17 @@ export default function AboutPage() {
             <div className="flex justify-center mb-8">
               <AmonarqLogo className="h-12" showWordmark={false} />
             </div>
-            
+
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-8 text-center">
               Who We Are
             </h2>
-            
+
             <div className="bg-card border border-border/50 rounded-2xl p-8 md:p-10 text-center">
               <p className="text-muted-foreground text-lg mb-6">
-                AMONARQ is building systems focused on life continuity.
+                amonarq is building systems focused on life continuity.
               </p>
               <p className="text-foreground">
-                We believe technology should reduce chaos, respect intent, 
+                We believe technology should reduce chaos, respect intent,
                 and support people during critical moments.
               </p>
             </div>
@@ -101,7 +101,7 @@ export default function AboutPage() {
         <div className="container mx-auto px-4 md:px-6">
           <AnimatedSection className="max-w-2xl mx-auto text-center">
             <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-6">
-              Amonarq Systems Private Limited
+              amonarq Systems Private Limited
             </h2>
             <address className="text-muted-foreground not-italic mb-8">
               4-578 & Row House, Prasanth Nagar,<br />

@@ -33,7 +33,7 @@ export default function ConsentApprovalPage() {
 
                             <div className="space-y-8 max-w-2xl">
                                 <p className="text-xl md:text-2xl text-foreground font-medium">
-                                    Every role, action, and access level in MYNXT is defined with consent.
+                                    Every role, action, and access level in Mynxt is defined with consent.
                                 </p>
                                 <div className="grid sm:grid-cols-2 gap-6 pt-8">
                                     <div className="flex items-center gap-4 bg-card/50 p-6 rounded-xl border border-border/50">

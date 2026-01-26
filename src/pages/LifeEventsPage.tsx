@@ -10,14 +10,14 @@ export default function LifeEventsPage() {
       {/* Hero */}
       <section className="py-20 md:py-32 relative overflow-hidden">
         <div className="absolute inset-0 pattern-overlay opacity-30" />
-        
+
         <div className="container relative mx-auto px-4 md:px-6">
           <AnimatedSection className="max-w-3xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
               Life Events
             </h1>
             <p className="text-xl text-muted-foreground font-light">
-              The core building block of MYNXT.
+              The core building block of Mynxt.
             </p>
           </AnimatedSection>
         </div>
@@ -132,7 +132,7 @@ export default function LifeEventsPage() {
               See how Life Events work with continuity
             </h2>
             <p className="text-muted-foreground mb-8">
-              Learn how MYNXT ensures your Life Events are protected for the future.
+              Learn how Mynxt ensures your Life Events are protected for the future.
             </p>
             <Button variant="hero" size="lg" asChild>
               <Link to="/continuity">

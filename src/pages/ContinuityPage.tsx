@@ -10,14 +10,14 @@ export default function ContinuityPage() {
       {/* Hero */}
       <section className="py-20 md:py-32 relative overflow-hidden">
         <div className="absolute inset-0 pattern-overlay opacity-30" />
-        
+
         <div className="container relative mx-auto px-4 md:px-6">
           <AnimatedSection className="max-w-3xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
               Continuity & Triggers
             </h1>
             <p className="text-xl text-muted-foreground font-light">
-              How MYNXT ensures responsibilities don't get stuck.
+              How Mynxt ensures responsibilities don't get stuck.
             </p>
           </AnimatedSection>
         </div>
@@ -32,14 +32,14 @@ export default function ContinuityPage() {
                 <Clock className="h-10 w-10 text-secondary" />
               </div>
             </div>
-            
+
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-8 text-center">
               Continuity Explained
             </h2>
-            
+
             <div className="bg-card border border-border/50 rounded-2xl p-8 md:p-10 text-center">
               <p className="text-muted-foreground text-lg mb-6">
-                MYNXT uses continuity checks to ensure responsibilities don't get stuck 
+                Mynxt uses continuity checks to ensure responsibilities don't get stuck
                 if someone becomes unavailable.
               </p>
               <div className="flex flex-wrap items-center justify-center gap-4 text-sm">
@@ -78,8 +78,8 @@ export default function ContinuityPage() {
                     Triggers do not grant access.
                   </p>
                   <p className="text-muted-foreground">
-                    They only initiate a controlled process based on predefined rules. 
-                    Every step requires verification and follows the consent framework 
+                    They only initiate a controlled process based on predefined rules.
+                    Every step requires verification and follows the consent framework
                     you've established.
                   </p>
                 </div>
@@ -100,24 +100,24 @@ export default function ContinuityPage() {
 
           <div className="max-w-3xl mx-auto space-y-6">
             {[
-              { 
-                step: "1", 
-                title: "Regular Check-ins", 
-                desc: "MYNXT periodically verifies your availability through simple confirmations."
+              {
+                step: "1",
+                title: "Regular Check-ins",
+                desc: "Mynxt periodically verifies your availability through simple confirmations."
               },
-              { 
-                step: "2", 
-                title: "Trigger Activation", 
+              {
+                step: "2",
+                title: "Trigger Activation",
                 desc: "If confirmations are missed, the continuity process begins based on your rules."
               },
-              { 
-                step: "3", 
-                title: "Verification Steps", 
+              {
+                step: "3",
+                title: "Verification Steps",
                 desc: "Multiple verification steps ensure the trigger is valid before any action."
               },
-              { 
-                step: "4", 
-                title: "Controlled Access", 
+              {
+                step: "4",
+                title: "Controlled Access",
                 desc: "Only after all conditions are met, designated people receive limited access as defined."
               },
             ].map((item, idx) => (
@@ -145,7 +145,7 @@ export default function ContinuityPage() {
               Consent is at the heart of everything
             </h2>
             <p className="text-muted-foreground mb-8">
-              Learn how MYNXT ensures no action happens without proper authorization.
+              Learn how Mynxt ensures no action happens without proper authorization.
             </p>
             <Button variant="hero" size="lg" asChild>
               <Link to="/consent">

@@ -17,13 +17,13 @@ export default function PrivacyPolicyPage() {
                             Privacy Policy
                         </h1>
                         <p className="text-muted-foreground mb-8">
-                            AMONARQ / MYNXT | Last updated: {lastUpdated}
+                            amonarq / Mynxt | Last updated: {lastUpdated}
                         </p>
 
                         <div className="prose prose-invert max-w-none space-y-12 text-muted-foreground leading-relaxed">
                             <section>
                                 <p>
-                                    AMONARQ (“we”, “our”, “us”) operates the MYNXT platform. This Privacy Policy explains how we collect, use, store, and protect information when you use MYNXT.
+                                    amonarq (“we”, “our”, “us”) operates the Mynxt platform. This Privacy Policy explains how we collect, use, store, and protect information when you use Mynxt.
                                 </p>
                             </section>
 
@@ -71,7 +71,7 @@ export default function PrivacyPolicyPage() {
 
                             <section>
                                 <h2 className="text-2xl font-semibold text-foreground mb-6">3. Consent-Based Access</h2>
-                                <p className="mb-4">MYNXT follows a consent-driven access model:</p>
+                                <p className="mb-4">Mynxt follows a consent-driven access model:</p>
                                 <ul className="list-disc pl-5 space-y-2">
                                     <li>No data is disclosed by default</li>
                                     <li>Access is granted only after predefined conditions and approvals are met</li>
@@ -123,7 +123,7 @@ export default function PrivacyPolicyPage() {
                             <section>
                                 <h2 className="text-2xl font-semibold text-foreground mb-6">7. Third-Party Services</h2>
                                 <p>
-                                    MYNXT may use trusted third-party services (such as cloud infrastructure providers) strictly for platform operation. These providers are bound by confidentiality and security obligations.
+                                    Mynxt may use trusted third-party services (such as cloud infrastructure providers) strictly for platform operation. These providers are bound by confidentiality and security obligations.
                                 </p>
                             </section>
 
@@ -132,7 +132,7 @@ export default function PrivacyPolicyPage() {
                             <section>
                                 <h2 className="text-2xl font-semibold text-foreground mb-6">8. Children’s Privacy</h2>
                                 <p>
-                                    MYNXT is not intended for individuals under the age of 18.
+                                    Mynxt is not intended for individuals under the age of 18.
                                 </p>
                             </section>
 

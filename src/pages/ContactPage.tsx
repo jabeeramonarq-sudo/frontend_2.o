@@ -52,7 +52,7 @@ export default function ContactPage() {
 
     setIsSubmitting(true);
     await new Promise((resolve) => setTimeout(resolve, 1500));
-    
+
     setIsSubmitting(false);
     setIsSubmitted(true);
     toast.success("Thank you for your interest. We'll get back to you soon.");
@@ -63,14 +63,14 @@ export default function ContactPage() {
       {/* Hero */}
       <section className="py-20 md:py-32 relative overflow-hidden">
         <div className="absolute inset-0 pattern-overlay opacity-30" />
-        
+
         <div className="container relative mx-auto px-4 md:px-6">
           <AnimatedSection className="max-w-3xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
               Contact
             </h1>
             <p className="text-xl text-muted-foreground font-light">
-              Interested in MYNXT or early access? Get in touch with us.
+              Interested in Mynxt or early access? Get in touch with us.
             </p>
           </AnimatedSection>
         </div>
@@ -86,10 +86,10 @@ export default function ContactPage() {
                 Get in Touch
               </h2>
               <p className="text-muted-foreground mb-8">
-                Have a question about MYNXT, interested in early access, or want to learn 
-                more about Amonarq? We'd love to hear from you.
+                Have a question about Mynxt, interested in early access, or want to learn
+                more about amonarq? We'd love to hear from you.
               </p>
-              
+
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
                   <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
@@ -106,7 +106,7 @@ export default function ContactPage() {
                     </a>
                   </div>
                 </div>
-                
+
                 <div className="flex items-start gap-4">
                   <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
                     <MapPin className="h-5 w-5 text-primary" />
@@ -126,7 +126,7 @@ export default function ContactPage() {
               <div className="mt-10 p-6 bg-primary/5 border border-primary/20 rounded-xl">
                 <h3 className="font-semibold text-foreground mb-2">Early Access</h3>
                 <p className="text-muted-foreground text-sm">
-                  MYNXT is currently in development. Request early access through the form 
+                  MYNXT is currently in development. Request early access through the form
                   to be among the first to experience it.
                 </p>
               </div>
@@ -145,8 +145,8 @@ export default function ContactPage() {
                   <p className="text-muted-foreground mb-6">
                     Thank you for your interest in MYNXT. We'll get back to you as soon as possible.
                   </p>
-                  <Button 
-                    variant="heroOutline" 
+                  <Button
+                    variant="heroOutline"
                     onClick={() => {
                       setIsSubmitted(false);
                       setFormData({ name: "", email: "", subject: "", message: "" });
@@ -172,7 +172,7 @@ export default function ContactPage() {
                         <p className="text-sm text-destructive mt-1">{errors.name}</p>
                       )}
                     </div>
-                    
+
                     <div>
                       <Label htmlFor="email" className="text-foreground">Email</Label>
                       <Input
@@ -188,7 +188,7 @@ export default function ContactPage() {
                         <p className="text-sm text-destructive mt-1">{errors.email}</p>
                       )}
                     </div>
-                    
+
                     <div>
                       <Label htmlFor="subject" className="text-foreground">Subject</Label>
                       <Input
@@ -203,7 +203,7 @@ export default function ContactPage() {
                         <p className="text-sm text-destructive mt-1">{errors.subject}</p>
                       )}
                     </div>
-                    
+
                     <div>
                       <Label htmlFor="message" className="text-foreground">Message</Label>
                       <Textarea
@@ -219,11 +219,11 @@ export default function ContactPage() {
                         <p className="text-sm text-destructive mt-1">{errors.message}</p>
                       )}
                     </div>
-                    
-                    <Button 
-                      type="submit" 
-                      variant="hero" 
-                      size="lg" 
+
+                    <Button
+                      type="submit"
+                      variant="hero"
+                      size="lg"
                       className="w-full"
                       disabled={isSubmitting}
                     >

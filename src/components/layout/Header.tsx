@@ -6,6 +6,7 @@ import { AmonarqLogo } from "@/components/brand/AmonarqLogo";
 
 const navLinks = [
   { href: "/", label: "Home" },
+  { href: "/product", label: "Product" },
   { href: "/how-it-works", label: "How It Works" },
   { href: "/life-events", label: "Life Events" },
   { href: "/continuity", label: "Continuity" },
