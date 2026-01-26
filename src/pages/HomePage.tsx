@@ -25,9 +25,7 @@ export default function HomePage() {
         
         <div className="container relative mx-auto px-4 md:px-6 py-20 md:py-32">
           <AnimatedSection className="max-w-4xl mx-auto text-center">
-            <div className="flex justify-center mb-6">
-              <MynxtLogo className="h-12" />
-            </div>
+            
             <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold text-foreground mb-6 tracking-tight">
               Organise Life.<br />
               <span className="text-gradient">Ensure Continuity.</span>
