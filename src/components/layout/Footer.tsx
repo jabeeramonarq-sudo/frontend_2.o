@@ -21,7 +21,7 @@ export function Footer() {
 
           {/* Product Links */}
           <div>
-            <h4 className="font-semibold text-foreground mb-4">Product</h4>
+            <h4 className="font-semibold text-foreground mb-4">Quick Links</h4>
             <ul className="space-y-2">
               <li>
                 <Link to="/how-it-works" className="text-muted-foreground hover:text-primary transition-colors text-sm">
