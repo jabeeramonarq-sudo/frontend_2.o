@@ -44,7 +44,7 @@ export default function LifeEventsPage() {
               Life Events
             </h1>
             <p className="text-xl text-muted-foreground font-light">
-              The core building block of Mynxt.
+              The core building block of MyNxt.
             </p>
           </AnimatedSection>
         </div>
@@ -61,34 +61,27 @@ export default function LifeEventsPage() {
               A Life Event is a structured way to organise a specific area of life responsibility.
             </p>
 
-            <div className="bg-card border border-border/50 rounded-2xl p-8 md:p-10">
-              <p className="text-foreground text-center mb-8">
+            <div className="bg-card border border-border/50 rounded-2xl p-8 md:p-12 max-w-3xl mx-auto shadow-sm">
+              <p className="text-foreground text-center text-lg mb-10 font-medium">
                 It brings together:
               </p>
-              <div className="grid md:grid-cols-3 gap-6">
-                <div className="text-center">
-                  <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                    <FileText className="h-7 w-7 text-primary" />
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+                <div className="text-center group">
+                  <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-5 group-hover:bg-primary/20 transition-colors">
+                    <FileText className="h-8 w-8 text-primary" />
                   </div>
-                  <h4 className="font-semibold text-foreground mb-1">Relevant Information</h4>
-                  <p className="text-sm text-muted-foreground">Documents, details, and context</p>
+                  <h4 className="font-bold text-foreground mb-2 text-xl">Relevant Information</h4>
+                  <p className="text-muted-foreground leading-relaxed">Documents, details, and context</p>
                 </div>
-                <div className="text-center">
-                  <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                    <Users className="h-7 w-7 text-primary" />
+                <div className="text-center group">
+                  <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-5 group-hover:bg-primary/20 transition-colors">
+                    <Settings className="h-8 w-8 text-primary" />
                   </div>
-                  <h4 className="font-semibold text-foreground mb-1">Trusted People</h4>
-                  <p className="text-sm text-muted-foreground">Family, friends, or advisors</p>
-                </div>
-                <div className="text-center">
-                  <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                    <Settings className="h-7 w-7 text-primary" />
-                  </div>
-                  <h4 className="font-semibold text-foreground mb-1">Clear Rules</h4>
-                  <p className="text-sm text-muted-foreground">Access and sharing conditions</p>
+                  <h4 className="font-bold text-foreground mb-2 text-xl">Clear Rules</h4>
+                  <p className="text-muted-foreground leading-relaxed">Access and sharing conditions</p>
                 </div>
               </div>
-              <p className="text-primary text-center mt-8 font-medium">
+              <p className="text-primary text-center mt-12 font-bold text-lg tracking-tight">
                 All in one place.
               </p>
             </div>
@@ -159,7 +152,7 @@ export default function LifeEventsPage() {
               See how Life Events work with continuity
             </h2>
             <p className="text-muted-foreground mb-8">
-              Learn how Mynxt ensures your Life Events are protected for the future.
+              Learn how MyNxt ensures your Life Events are protected for the future.
             </p>
             <Button variant="hero" size="lg" asChild>
               <Link to="/continuity">

@@ -1,3 +1,6 @@
+import { Link } from "react-router-dom";
+import { ArrowLeft } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import { Layout } from "@/components/layout/Layout";
 import { SEO } from "@/components/shared/SEO";
 import { AnimatedSection } from "@/components/shared/AnimatedSection";
@@ -36,11 +39,17 @@ export default function TermsOfServicePage() {
             <section className="py-20 md:py-32">
                 <div className="container mx-auto px-4 md:px-6">
                     <AnimatedSection className="max-w-4xl mx-auto">
+                        <Button variant="ghost" size="sm" asChild className="mb-8 -ml-2 text-muted-foreground hover:text-foreground">
+                            <Link to="/">
+                                <ArrowLeft className="mr-2 h-4 w-4" />
+                                Back to Home
+                            </Link>
+                        </Button>
                         <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4 tracking-tight">
                             Terms of Service
                         </h1>
                         <p className="text-muted-foreground mb-8">
-                            Amonarq / Mynxt | Last updated: {lastUpdated}
+                            Amonarq / MyNxt | Last updated: {lastUpdated}
                         </p>
 
                         <div className="prose prose-invert max-w-none space-y-12 text-muted-foreground leading-relaxed">
@@ -160,7 +169,7 @@ export default function TermsOfServicePage() {
                                 <p className="mb-4">For questions regarding these Terms:</p>
                                 <div className="flex flex-col space-y-2">
                                     <a href="mailto:contact@Amonarq.com" className="text-primary hover:underline">
-                                        📧 contact@Amonarq.com
+                                        📧 contact@amonarq.com
                                     </a>
                                 </div>
                             </section>

@@ -5,7 +5,7 @@ import { AnimatedSection } from "@/components/shared/AnimatedSection";
 import { Button } from "@/components/ui/button";
 import {
   FolderOpen, Users, Settings, Shield, PlayCircle,
-  ArrowRight, ChevronRight
+  ArrowRight, ChevronRight, FileText, Zap, Bell, CheckCircle
 } from "lucide-react";
 
 const steps = [
@@ -39,6 +39,30 @@ const steps = [
     description: "When needed, actions follow predefined rules and confirmations.",
     icon: PlayCircle,
   },
+  {
+    number: "06",
+    title: "Who should be notified",
+    description: "Define who should be notified or receive access when the time comes.",
+    icon: Bell,
+  },
+  {
+    number: "07",
+    title: "What information is involved",
+    description: "Specify digital references, instructions, or information that needs protection.",
+    icon: FileText,
+  },
+  {
+    number: "08",
+    title: "When it's triggered",
+    description: "Determine the exact conditions when the continuity process begins.",
+    icon: Zap,
+  },
+  {
+    number: "09",
+    title: "How access occurs",
+    description: "Set the protocols for how notification, access, or execution should occur.",
+    icon: CheckCircle,
+  },
 ];
 
 export default function HowItWorksPage() {
@@ -52,38 +76,12 @@ export default function HowItWorksPage() {
           "@type": "HowTo",
           "name": "How Mynxt Works",
           "description": "A simple flow to organise, protect, and ensure continuity for your life responsibilities.",
-          "step": [
-            {
-              "@type": "HowToStep",
-              "name": "Organise",
-              "text": "Create Life Events to organise responsibilities and information.",
-              "position": 1
-            },
-            {
-              "@type": "HowToStep",
-              "name": "Define Roles",
-              "text": "Add people and define how they can help.",
-              "position": 2
-            },
-            {
-              "@type": "HowToStep",
-              "name": "Set Rules",
-              "text": "Decide what is shared, when, and under what conditions.",
-              "position": 3
-            },
-            {
-              "@type": "HowToStep",
-              "name": "Continuity Protection",
-              "text": "Enable continuity checks that work quietly in the background.",
-              "position": 4
-            },
-            {
-              "@type": "HowToStep",
-              "name": "Controlled Execution",
-              "text": "When needed, actions follow predefined rules and confirmations.",
-              "position": 5
-            }
-          ]
+          "step": steps.map((step, idx) => ({
+            "@type": "HowToStep",
+            "name": step.title,
+            "text": step.description,
+            "position": idx + 1
+          }))
         }}
       />
       {/* Hero */}
@@ -135,6 +133,12 @@ export default function HowItWorksPage() {
               </AnimatedSection>
             ))}
           </div>
+
+          <AnimatedSection className="mt-16 text-center">
+            <div className="inline-flex items-center gap-3 px-8 py-4 bg-secondary/10 border border-secondary/20 rounded-2xl text-secondary text-lg font-medium shadow-sm animate-fade-in max-w-2xl mx-auto">
+              <span>MyNxt executes this only after predefined validations and confirmations.</span>
+            </div>
+          </AnimatedSection>
         </div>
       </section>
 
@@ -146,7 +150,7 @@ export default function HowItWorksPage() {
               Ready to organise your life responsibilities?
             </h2>
             <p className="text-muted-foreground mb-8">
-              Request early access to be among the first to experience Mynxt.
+              Request early access to be among the first to experience MyNxt.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Button variant="hero" size="lg" asChild>

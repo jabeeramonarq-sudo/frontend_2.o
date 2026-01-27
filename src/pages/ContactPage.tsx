@@ -131,12 +131,12 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-foreground mb-1">Email</h3>
-                    <a href="mailto:contact@Amonarq.com" className="text-muted-foreground hover:text-primary transition-colors">
-                      contact@Amonarq.com
+                    <a href="mailto:contact@amonarq.com" className="text-muted-foreground hover:text-primary transition-colors">
+                      contact@amonarq.com
                     </a>
                     <br />
-                    <a href="mailto:business@Amonarq.com" className="text-muted-foreground hover:text-primary transition-colors">
-                      business@Amonarq.com
+                    <a href="mailto:business@amonarq.com" className="text-muted-foreground hover:text-primary transition-colors">
+                      business@amonarq.com
                     </a>
                   </div>
                 </div>

@@ -83,13 +83,18 @@ export default function HomePage() {
           <AnimatedSection className="max-w-4xl mx-auto text-center">
 
             <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold text-foreground mb-6 tracking-tight">
-              Organise Life.<br />
-              <span className="text-gradient">Ensure Continuity.</span>
+              Your Digital Life,<br />
+              <span className="text-gradient">Shouldn’t End in Chaos.</span>
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10">
-              Mynxt helps you organise life responsibilities today and ensures they are
-              handled smoothly when you're unavailable.
+              MYNXT helps individuals and families define what should happen to their digital assets, responsibilities, and information — in a clear, consent-based, and structured way.
             </p>
+
+            <div className="inline-flex items-center gap-2 px-6 py-2.5 bg-primary/10 border border-primary/20 rounded-full text-primary text-sm font-medium mb-10 shadow-sm animate-fade-in">
+              <Shield className="h-4 w-4" />
+              <span>This keeps responsibilities easy to manage today and protected for the future.</span>
+            </div>
+
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Button variant="hero" size="xl" asChild>
                 <Link to="/how-it-works">
@@ -109,9 +114,6 @@ export default function HomePage() {
       <section className="py-20 md:py-32 surface-dark">
         <div className="container mx-auto px-4 md:px-6">
           <AnimatedSection className="max-w-3xl mx-auto text-center">
-            <div className="w-16 h-16 rounded-full bg-warning/10 flex items-center justify-center mx-auto mb-8">
-              <AlertTriangle className="h-8 w-8 text-warning" />
-            </div>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
               Life responsibilities are scattered.
             </h2>
@@ -198,9 +200,6 @@ export default function HomePage() {
       <section className="py-20 md:py-32">
         <div className="container mx-auto px-4 md:px-6">
           <AnimatedSection className="max-w-3xl mx-auto text-center">
-            <div className="w-16 h-16 rounded-full bg-secondary/10 flex items-center justify-center mx-auto mb-8">
-              <Clock className="h-8 w-8 text-secondary" />
-            </div>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
               Continuity works quietly in the background.
             </h2>
@@ -290,9 +289,6 @@ export default function HomePage() {
       <section className="py-20 md:py-32">
         <div className="container mx-auto px-4 md:px-6">
           <AnimatedSection className="max-w-3xl mx-auto text-center">
-            <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-8">
-              <Heart className="h-8 w-8 text-primary" />
-            </div>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
               Built with care and responsibility.
             </h2>

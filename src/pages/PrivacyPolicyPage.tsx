@@ -1,3 +1,6 @@
+import { Link } from "react-router-dom";
+import { ArrowLeft } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import { Layout } from "@/components/layout/Layout";
 import { SEO } from "@/components/shared/SEO";
 import { AnimatedSection } from "@/components/shared/AnimatedSection";
@@ -40,18 +43,32 @@ export default function PrivacyPolicyPage() {
             <section className="py-20 md:py-32">
                 <div className="container mx-auto px-4 md:px-6">
                     <AnimatedSection className="max-w-4xl mx-auto">
+                        <Button variant="ghost" size="sm" asChild className="mb-8 -ml-2 text-muted-foreground hover:text-foreground">
+                            <Link to="/">
+                                <ArrowLeft className="mr-2 h-4 w-4" />
+                                Back to Home
+                            </Link>
+                        </Button>
                         <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4 tracking-tight">
                             Privacy Policy
                         </h1>
                         <p className="text-muted-foreground mb-8">
-                            Amonarq / Mynxt | Last updated: {lastUpdated}
+                            Amonarq / MyNxt | Last updated: {lastUpdated}
                         </p>
 
                         <div className="prose prose-invert max-w-none space-y-12 text-muted-foreground leading-relaxed">
                             <section>
-                                <p>
+                                <p className="mb-4">
                                     Amonarq (“we”, “our”, “us”) operates the Mynxt platform. This Privacy Policy explains how we collect, use, store, and protect information when you use Mynxt.
                                 </p>
+                                <div className="bg-primary/5 border border-primary/20 rounded-xl p-6 mb-8">
+                                    <p className="text-foreground font-semibold mb-2">
+                                        MYNXT does not claim ownership of user data or digital assets.
+                                    </p>
+                                    <p className="text-muted-foreground">
+                                        The platform facilitates consent-based continuity instructions and controlled access flows, executed only under predefined user conditions.
+                                    </p>
+                                </div>
                             </section>
 
                             <hr className="border-border/30" />
@@ -179,9 +196,11 @@ export default function PrivacyPolicyPage() {
                                 <p className="mb-4">For privacy-related questions:</p>
                                 <div className="flex flex-col space-y-2">
                                     <a href="mailto:contact@Amonarq.com" className="text-primary hover:underline">
-                                        📧 contact@Amonarq.com
+                                        📧 contact@amonarq.com
                                     </a>
-                                    <p>📍 India</p>
+                                    <p>📍 4-578 & Row House, Prasanth Nagar,
+                                        Madanapalle, Andhra Pradesh
+                                        PIN-517325, India.</p>
                                 </div>
                             </section>
                         </div>

@@ -43,9 +43,12 @@ export default function SecurityPage() {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
               Security & Trust
             </h1>
-            <p className="text-xl text-muted-foreground font-light">
-              Built with responsibility at its foundation.
+            <p className="text-xl text-muted-foreground font-light mb-8">
+             <b>MYNXT does not claim ownership of user data or digital assets.</b>  <br />
+             The platform facilitates consent-based continuity instructions and controlled access flows, executed only under predefined user conditions.
+
             </p>
+            
           </AnimatedSection>
         </div>
       </section>
@@ -107,10 +110,12 @@ export default function SecurityPage() {
                 <p className="text-muted-foreground text-sm">
                   Actions follow predefined rules with multiple verification steps.
                 </p>
+                
               </div>
             </div>
           </AnimatedSection>
         </div>
+        
       </section>
 
       {/* Trust Statement */}
@@ -126,8 +131,8 @@ export default function SecurityPage() {
               Mynxt, you can be confident that your data is protected and your intentions
               are respected.
             </p>
-            <div className="inline-flex items-center gap-2 text-sm text-muted-foreground/70 bg-muted/30 px-4 py-2 rounded-full">
-              <Shield className="h-4 w-4" />
+            <div className="inline-flex items-center gap-3 text-sm font-medium text-primary bg-primary/10 border border-primary/20 px-6 py-3 rounded-full shadow-sm hover:bg-primary/15 transition-colors">
+              <Shield className="h-5 w-5" />
               <span>Designed in alignment with applicable data protection norms</span>
             </div>
           </AnimatedSection>

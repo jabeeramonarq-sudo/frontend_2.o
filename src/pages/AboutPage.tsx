@@ -58,75 +58,52 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Who We Are */}
+      {/* About Us Content */}
       <section className="py-16 md:py-24 surface-dark">
         <div className="container mx-auto px-4 md:px-6">
-          <AnimatedSection className="max-w-3xl mx-auto">
-            <div className="flex justify-center mb-8">
-              <AmonarqLogo className="h-12" showWordmark={false} />
+          <AnimatedSection className="max-w-4xl mx-auto">
+            <div className="flex justify-center mb-12">
+              <AmonarqLogo className="h-16" showWordmark={false} />
             </div>
 
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-8 text-center">
-              Who We Are
-            </h2>
+            <div className="space-y-12 text-center md:text-left">
+              <div className="text-center mb-16">
+                <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6">
+                  AMONARQ is building technology for <span className="text-gradient">digital life continuity.</span>
+                </h2>
+                <p className="text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto">
+                  As our lives become increasingly digital, important information, responsibilities, and instructions often remain unstructured and inaccessible when they are needed the most. This creates uncertainty, emotional stress, and operational challenges for families and trusted individuals.
+                </p>
+              </div>
 
-            <div className="bg-card border border-border/50 rounded-2xl p-8 md:p-10 text-center">
-              <p className="text-muted-foreground text-lg mb-6">
-                Amonarq is building systems focused on life continuity.
-              </p>
-              <p className="text-foreground">
-                We believe technology should reduce chaos, respect intent,
-                and support people during critical moments.
-              </p>
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
-
-      {/* Vision */}
-      <section className="py-16 md:py-24">
-        <div className="container mx-auto px-4 md:px-6">
-          <AnimatedSection className="max-w-3xl mx-auto text-center">
-            <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-8">
-              <Eye className="h-8 w-8 text-primary" />
-            </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-              Vision
-            </h2>
-            <p className="text-xl text-muted-foreground font-display">
-              To help life continue smoothly, even when someone is unavailable.
-            </p>
-          </AnimatedSection>
-        </div>
-      </section>
-
-      {/* Philosophy */}
-      <section className="py-16 md:py-24 surface-dark">
-        <div className="container mx-auto px-4 md:px-6">
-          <AnimatedSection>
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-12 text-center">
-              Philosophy
-            </h2>
-          </AnimatedSection>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
-            {[
-              { icon: Target, title: "Reduce confusion", desc: "Bring clarity to complex situations" },
-              { icon: Heart, title: "Respect consent", desc: "Every action requires authorization" },
-              { icon: Shield, title: "Build with restraint", desc: "Do only what's necessary" },
-              { icon: Eye, title: "Focus on real problems", desc: "Solve genuine human needs" },
-            ].map((item, idx) => (
-              <AnimatedSection key={idx} delay={idx * 100}>
-                <div className="bg-card border border-border/50 rounded-xl p-6 text-center hover:border-primary/30 transition-colors h-full">
-                  <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                    <item.icon className="h-6 w-6 text-primary" />
-                  </div>
-                  <h3 className="font-semibold text-foreground mb-2">{item.title}</h3>
-                  <p className="text-muted-foreground text-sm">{item.desc}</p>
+              <div className="grid md:grid-cols-2 gap-12 items-center">
+                <div className="space-y-6">
+                  <h3 className="text-2xl md:text-3xl font-bold text-foreground">
+                    MYNXT is designed to solve this gap.
+                  </h3>
+                  <p className="text-lg text-muted-foreground leading-relaxed">
+                    Instead of storing data, MYNXT enables individuals to pre-define how their digital life should continue — clearly, securely, and with consent. Users can specify who should be involved, what information or instructions matter, when continuity should be triggered, and how execution should occur.
+                  </p>
                 </div>
-              </AnimatedSection>
-            ))}
-          </div>
+                <div className="bg-card border border-border/50 rounded-2xl p-8 shadow-sm">
+                  <p className="text-foreground text-lg leading-relaxed italic">
+                    "The platform focuses on controlled access, validation-driven execution, and traceable processes — ensuring that digital continuity happens responsibly, without ambiguity or misuse."
+                  </p>
+                </div>
+              </div>
+
+              <div className="pt-12 text-center">
+                <div className="inline-block p-1 rounded-full bg-primary/10 mb-6">
+                  <div className="bg-background px-6 py-2 rounded-full border border-primary/20">
+                    <span className="text-primary font-semibold tracking-wide uppercase text-sm">Our Mission</span>
+                  </div>
+                </div>
+                <p className="text-2xl md:text-3xl font-bold text-foreground max-w-3xl mx-auto leading-tight">
+                  AMONARQ’s mission is to reduce chaos during critical moments by bringing structure, clarity, and trust to digital continuity.
+                </p>
+              </div>
+            </div>
+          </AnimatedSection>
         </div>
       </section>
 

@@ -55,7 +55,7 @@ export default function ConsentApprovalPage() {
                                 <UserCheck className="h-8 w-8 text-primary" />
                             </div>
                             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-12">
-                                Section 1: Consent First
+                                 Consent First
                             </h2>
 
                             <div className="space-y-8 max-w-2xl">
@@ -83,7 +83,7 @@ export default function ConsentApprovalPage() {
                 <div className="container mx-auto px-4 md:px-6">
                     <AnimatedSection className="max-w-4xl mx-auto">
                         <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-16 text-center">
-                            Section 2: Why This Matters
+                            Why This Matters
                         </h2>
 
                         <div className="grid md:grid-cols-3 gap-8">
