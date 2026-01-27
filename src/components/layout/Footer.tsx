@@ -88,7 +88,7 @@ export function Footer() {
               <li className="flex items-center gap-3 group">
                 <Globe className="h-5 w-5 text-primary/60 shrink-0 group-hover:text-primary transition-colors" />
                 <span className="text-muted-foreground text-sm italic">
-                  Amonarq Systems Pvt Ltd
+                  www.amonarq.com
                 </span>
               </li>
             </ul>
