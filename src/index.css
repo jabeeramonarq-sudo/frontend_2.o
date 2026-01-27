@@ -82,7 +82,12 @@
     font-family: 'Inter', sans-serif;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-family: 'Inter', sans-serif;
     @apply font-semibold tracking-tight;
   }
@@ -90,9 +95,15 @@
   .font-display {
     font-family: 'DM Sans', sans-serif;
   }
+
+  ::selection {
+    background-color: hsl(var(--primary) / 0.3);
+    color: hsl(var(--foreground));
+  }
 }
 
 @layer utilities {
+
   /* Gradient text */
   .text-gradient {
     @apply bg-clip-text text-transparent;
@@ -157,6 +168,7 @@
     from {
       opacity: 0;
     }
+
     to {
       opacity: 1;
     }
@@ -167,6 +179,7 @@
       opacity: 0;
       transform: translateY(20px);
     }
+
     to {
       opacity: 1;
       transform: translateY(0);
@@ -179,9 +192,12 @@
   }
 
   @keyframes pulseSoft {
-    0%, 100% {
+
+    0%,
+    100% {
       opacity: 1;
     }
+
     50% {
       opacity: 0.85;
     }
@@ -189,7 +205,7 @@
 
   /* Abstract pattern overlay */
   .pattern-overlay {
-    background-image: 
+    background-image:
       radial-gradient(ellipse at 20% 30%, hsl(142 71% 45% / 0.05) 0%, transparent 50%),
       radial-gradient(ellipse at 80% 70%, hsl(199 89% 60% / 0.05) 0%, transparent 50%);
   }
@@ -203,9 +219,11 @@
     0% {
       transform: translateY(0px);
     }
+
     50% {
       transform: translateY(-20px);
     }
+
     100% {
       transform: translateY(0px);
     }
@@ -214,7 +232,7 @@
   /* Grid pattern */
   .grid-pattern {
     background-size: 40px 40px;
-    background-image: 
+    background-image:
       linear-gradient(to right, hsl(var(--border) / 0.3) 1px, transparent 1px),
       linear-gradient(to bottom, hsl(var(--border) / 0.3) 1px, transparent 1px);
   }
