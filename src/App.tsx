@@ -16,6 +16,7 @@ import TermsOfServicePage from "./pages/TermsOfServicePage";
 import ProductPage from "@/pages/ProductPage";
 import NotFound from "./pages/NotFound";
 import { ScrollToTop } from "./components/shared/ScrollToTop";
+import { ScrollToTopOnNavigation } from "./components/shared/ScrollToTopOnNavigation";
 
 const queryClient = new QueryClient();
 
@@ -25,6 +26,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <ScrollToTopOnNavigation />
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<HomePage />} />
