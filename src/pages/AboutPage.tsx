@@ -102,6 +102,29 @@ export default function AboutPage() {
                   AMONARQ’s mission is to reduce chaos during critical moments by bringing structure, clarity, and trust to digital continuity.
                 </p>
               </div>
+
+              {/* Added Vision & Philosophy */}
+              <div className="grid md:grid-cols-2 gap-12 pt-16">
+                <div className="space-y-6 p-8 rounded-2xl bg-primary/5 border border-primary/10 text-left">
+                  <div className="h-12 w-12 rounded-xl bg-primary/20 flex items-center justify-center text-primary mb-2">
+                    <Eye className="h-6 w-6" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-foreground">Our Vision</h3>
+                  <p className="text-muted-foreground leading-relaxed">
+                    To be the most trusted global platform for digital life continuity, ensuring that every individual's intentions are respected and their loved ones are supported, regardless of the circumstances. We envision a world where technology acts as a reliable bridge across generations.
+                  </p>
+                </div>
+
+                <div className="space-y-6 p-8 rounded-2xl bg-secondary/5 border border-secondary/10 text-left">
+                  <div className="h-12 w-12 rounded-xl bg-secondary/20 flex items-center justify-center text-secondary mb-2">
+                    <Heart className="h-6 w-6" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-foreground">Our Philosophy</h3>
+                  <p className="text-muted-foreground leading-relaxed">
+                    We believe in <strong>Security by Constraint</strong>, <strong>Consent by Design</strong>, and <strong>Clarity over Complexity</strong>. Technology should serve the human experience, not complicate it. Our approach is rooted in respect for user autonomy and radical transparency in how continuity instructions are managed.
+                  </p>
+                </div>
+              </div>
             </div>
           </AnimatedSection>
         </div>

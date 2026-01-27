@@ -70,11 +70,11 @@ export default function HowItWorksPage() {
     <Layout>
       <SEO
         title="How It Works"
-        description="Learn how Mynxt works through a simple flow to organise, protect, and ensure continuity for your life responsibilities."
+        description="Learn how MyNxt works through a simple flow to organise, protect, and ensure continuity for your life responsibilities."
         schema={{
           "@context": "https://schema.org",
           "@type": "HowTo",
-          "name": "How Mynxt Works",
+          "name": "How MyNxt Works",
           "description": "A simple flow to organise, protect, and ensure continuity for your life responsibilities.",
           "step": steps.map((step, idx) => ({
             "@type": "HowToStep",
@@ -91,7 +91,7 @@ export default function HowItWorksPage() {
         <div className="container relative mx-auto px-4 md:px-6">
           <AnimatedSection className="max-w-3xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
-              How Mynxt Works
+              How MyNxt Works
             </h1>
             <p className="text-xl text-muted-foreground font-light">
               A simple flow to organise, protect, and ensure continuity.

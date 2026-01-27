@@ -16,7 +16,7 @@ export default function PrivacyPolicyPage() {
         <Layout>
             <SEO
                 title="Privacy Policy"
-                description="Our Privacy Policy explains how we collect, use, store, and protect information when you use Mynxt."
+                description="Our Privacy Policy explains how we collect, use, store, and protect information when you use MyNxt."
                 schema={{
                     "@context": "https://schema.org",
                     "@graph": [
@@ -59,11 +59,11 @@ export default function PrivacyPolicyPage() {
                         <div className="prose prose-invert max-w-none space-y-12 text-muted-foreground leading-relaxed">
                             <section>
                                 <p className="mb-4">
-                                    Amonarq (“we”, “our”, “us”) operates the Mynxt platform. This Privacy Policy explains how we collect, use, store, and protect information when you use Mynxt.
+                                    Amonarq (“we”, “our”, “us”) operates the MyNxt platform. This Privacy Policy explains how we collect, use, store, and protect information when you use MyNxt.
                                 </p>
                                 <div className="bg-primary/5 border border-primary/20 rounded-xl p-6 mb-8">
                                     <p className="text-foreground font-semibold mb-2">
-                                        MYNXT does not claim ownership of user data or digital assets.
+                                        MyNxt does not claim ownership of user data or digital assets.
                                     </p>
                                     <p className="text-muted-foreground">
                                         The platform facilitates consent-based continuity instructions and controlled access flows, executed only under predefined user conditions.
@@ -115,7 +115,7 @@ export default function PrivacyPolicyPage() {
 
                             <section>
                                 <h2 className="text-2xl font-semibold text-foreground mb-6">3. Consent-Based Access</h2>
-                                <p className="mb-4">Mynxt follows a consent-driven access model:</p>
+                                <p className="mb-4">MyNxt follows a consent-driven access model:</p>
                                 <ul className="list-disc pl-5 space-y-2">
                                     <li>No data is disclosed by default</li>
                                     <li>Access is granted only after predefined conditions and approvals are met</li>
@@ -167,7 +167,7 @@ export default function PrivacyPolicyPage() {
                             <section>
                                 <h2 className="text-2xl font-semibold text-foreground mb-6">7. Third-Party Services</h2>
                                 <p>
-                                    Mynxt may use trusted third-party services (such as cloud infrastructure providers) strictly for platform operation. These providers are bound by confidentiality and security obligations.
+                                    MyNxt may use trusted third-party services (such as cloud infrastructure providers) strictly for platform operation. These providers are bound by confidentiality and security obligations.
                                 </p>
                             </section>
 
@@ -176,7 +176,7 @@ export default function PrivacyPolicyPage() {
                             <section>
                                 <h2 className="text-2xl font-semibold text-foreground mb-6">8. Children’s Privacy</h2>
                                 <p>
-                                    Mynxt is not intended for individuals under the age of 18.
+                                    MyNxt is not intended for individuals under the age of 18.
                                 </p>
                             </section>
 

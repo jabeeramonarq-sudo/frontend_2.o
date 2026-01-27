@@ -76,7 +76,7 @@ export function Footer() {
               <li className="flex items-start gap-3 group">
                 <MapPin className="h-5 w-5 text-primary/60 shrink-0 mt-0.5 group-hover:text-primary transition-colors" />
                 <span className="text-muted-foreground text-sm leading-relaxed">
-                  4-578 & Row House, Prasanth Nagar, Madanapalle, AP - 517325
+                  4-578 & Row House, Prasanth Nagar, Madanapalle, AP - 517325,India.
                 </span>
               </li>
               <li className="flex items-center gap-3 group">
@@ -101,7 +101,7 @@ export function Footer() {
           <div className="max-w-4xl mx-auto px-6 py-4 bg-primary/5 border border-primary/10 rounded-xl">
             <p className="text-muted-foreground/70 text-[11px] md:text-[12px] text-center leading-relaxed">
               <span className="text-primary/80 font-semibold uppercase mr-2 tracking-wider text-[10px]">Disclaimer:</span>
-              MYNXT is a consent-based digital continuity execution platform, focused on structured access and predefined instructions and MYNXT does not store or claim ownership over user assets.
+              MyNxt is a consent-based digital continuity execution platform, focused on structured access and predefined instructions and MyNxt does not store or claim ownership over user assets.
             </p>
           </div>
 
@@ -120,13 +120,7 @@ export function Footer() {
               © {currentYear} Amonarq Systems. All rights reserved.
             </p>
 
-            <div className="flex items-center gap-2 text-muted-foreground/40 text-[11px] tracking-wide">
-              <span>This Site Developed by</span>
-              <a href="https://semixon.com" target="_blank" rel="noopener noreferrer"
-                className="flex items-center text-primary/60 hover:text-primary transition-all font-medium border-b border-transparent hover:border-primary/30 pb-0.5">
-                Semixon Technologies
-              </a>
-            </div>
+
           </div>
         </div>
       </div>

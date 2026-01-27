@@ -10,7 +10,7 @@ export default function ContinuityPage() {
     <Layout>
       <SEO
         title="Continuity & Triggers"
-        description="Learn how Mynxt ensures responsibilities don't get stuck through smart continuity checks and predefined triggers."
+        description="Learn how MyNxt ensures responsibilities don't get stuck through smart continuity checks and predefined triggers."
         schema={{
           "@context": "https://schema.org",
           "@graph": [
@@ -44,7 +44,7 @@ export default function ContinuityPage() {
               Continuity & Triggers
             </h1>
             <p className="text-xl text-muted-foreground font-light">
-              How Mynxt ensures responsibilities don't get stuck.
+              How MyNxt ensures responsibilities don't get stuck.
             </p>
           </AnimatedSection>
         </div>
@@ -66,7 +66,7 @@ export default function ContinuityPage() {
 
             <div className="bg-card border border-border/50 rounded-2xl p-8 md:p-10 text-center">
               <p className="text-muted-foreground text-lg mb-6">
-                Mynxt uses continuity checks to ensure responsibilities don't get stuck
+                MyNxt uses continuity checks to ensure responsibilities don't get stuck
                 if someone becomes unavailable.
               </p>
               <div className="flex flex-wrap items-center justify-center gap-4 text-sm">
@@ -130,7 +130,7 @@ export default function ContinuityPage() {
               {
                 step: "1",
                 title: "Regular Check-ins",
-                desc: "Mynxt periodically verifies your availability through simple confirmations."
+                desc: "MyNxt periodically verifies your availability through simple confirmations."
               },
               {
                 step: "2",
@@ -172,7 +172,7 @@ export default function ContinuityPage() {
               Consent is at the heart of everything
             </h2>
             <p className="text-muted-foreground mb-8">
-              Learn how Mynxt ensures no action happens without proper authorization.
+              Learn how MyNxt ensures no action happens without proper authorization.
             </p>
             <Button variant="hero" size="lg" asChild>
               <Link to="/consent">

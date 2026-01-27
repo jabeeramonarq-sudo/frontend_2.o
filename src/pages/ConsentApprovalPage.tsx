@@ -8,7 +8,7 @@ export default function ConsentApprovalPage() {
         <Layout>
             <SEO
                 title="Consent & Approval"
-                description="Mynxt builds trust through explicit authorization, clear intent, and a robust consent framework."
+                description="MyNxt builds trust through explicit authorization, clear intent, and a robust consent framework."
                 schema={{
                     "@context": "https://schema.org",
                     "@graph": [
@@ -55,12 +55,12 @@ export default function ConsentApprovalPage() {
                                 <UserCheck className="h-8 w-8 text-primary" />
                             </div>
                             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-12">
-                                 Consent First
+                                Consent First
                             </h2>
 
                             <div className="space-y-8 max-w-2xl">
                                 <p className="text-xl md:text-2xl text-foreground font-medium">
-                                    Every role, action, and access level in Mynxt is defined with consent.
+                                    Every role, action, and access level in MyNxt is defined with consent.
                                 </p>
                                 <div className="grid sm:grid-cols-2 gap-6 pt-8">
                                     <div className="flex items-center gap-4 bg-card/50 p-6 rounded-xl border border-border/50">

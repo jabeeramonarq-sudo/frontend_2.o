@@ -10,7 +10,7 @@ export default function SecurityPage() {
     <Layout>
       <SEO
         title="Security & Trust"
-        description="Mynxt is built with responsibility at its foundation. Learn about our zero-knowledge security, consent-driven access, and tamper-proof logs."
+        description="MyNxt is built with responsibility at its foundation. Learn about our zero-knowledge security, consent-driven access, and tamper-proof logs."
         schema={{
           "@context": "https://schema.org",
           "@graph": [
@@ -44,11 +44,11 @@ export default function SecurityPage() {
               Security & Trust
             </h1>
             <p className="text-xl text-muted-foreground font-light mb-8">
-             <b>MYNXT does not claim ownership of user data or digital assets.</b>  <br />
-             The platform facilitates consent-based continuity instructions and controlled access flows, executed only under predefined user conditions.
+              <b>MyNxt does not claim ownership of user data or digital assets.</b>  <br />
+              The platform facilitates consent-based continuity instructions and controlled access flows, executed only under predefined user conditions.
 
             </p>
-            
+
           </AnimatedSection>
         </div>
       </section>
@@ -68,7 +68,7 @@ export default function SecurityPage() {
             </h2>
 
             <p className="text-muted-foreground text-lg text-center mb-12">
-              Mynxt is built with security and responsibility at its foundation.
+              MyNxt is built with security and responsibility at its foundation.
             </p>
 
             <div className="grid sm:grid-cols-2 gap-6">
@@ -110,12 +110,12 @@ export default function SecurityPage() {
                 <p className="text-muted-foreground text-sm">
                   Actions follow predefined rules with multiple verification steps.
                 </p>
-                
+
               </div>
             </div>
           </AnimatedSection>
         </div>
-        
+
       </section>
 
       {/* Trust Statement */}
@@ -128,7 +128,7 @@ export default function SecurityPage() {
             <p className="text-muted-foreground text-lg mb-8">
               Trust isn't claimed—it's earned. We're committed to transparent practices,
               robust security, and respecting your privacy at every step. When you use
-              Mynxt, you can be confident that your data is protected and your intentions
+              MyNxt, you can be confident that your data is protected and your intentions
               are respected.
             </p>
             <div className="inline-flex items-center gap-3 text-sm font-medium text-primary bg-primary/10 border border-primary/20 px-6 py-3 rounded-full shadow-sm hover:bg-primary/15 transition-colors">
@@ -147,7 +147,7 @@ export default function SecurityPage() {
               Ready to learn more?
             </h2>
             <p className="text-muted-foreground mb-8">
-              Get in touch to learn more about Mynxt or request early access.
+              Get in touch to learn more about MyNxt or request early access.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Button variant="hero" size="lg" asChild>

@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { AnimatedSection } from "@/components/shared/AnimatedSection";
 import { Layout } from "@/components/layout/Layout";
 import { SEO } from "@/components/shared/SEO";
-import { MynxtLogo } from "@/components/brand/AmonarqLogo";
+import { MyNxtLogo } from "@/components/brand/AmonarqLogo";
 import {
   FolderOpen, Users, Shield, Clock, CheckCircle, XCircle,
   ArrowRight, Lock, FileCheck, AlertTriangle, Heart
@@ -15,7 +15,7 @@ export default function HomePage() {
     <Layout>
       <SEO
         title="Home"
-        description="Amonarq builds digital products focused on reducing chaos, protecting trust, and enabling uninterrupted human flow. Mynxt ensures your life responsibilities are handled smoothly."
+        description="Amonarq builds digital products focused on reducing chaos, protecting trust, and enabling uninterrupted human flow. MyNxt ensures your life responsibilities are handled smoothly."
         schema={{
           "@context": "https://schema.org",
           "@graph": [
@@ -87,7 +87,7 @@ export default function HomePage() {
               <span className="text-gradient">Shouldn’t End in Chaos.</span>
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10">
-              MYNXT helps individuals and families define what should happen to their digital assets, responsibilities, and information — in a clear, consent-based, and structured way.
+              MyNxt helps individuals and families define what should happen to their digital assets, responsibilities, and information — in a clear, consent-based, and structured way.
             </p>
 
             <div className="inline-flex items-center gap-2 px-6 py-2.5 bg-primary/10 border border-primary/20 rounded-full text-primary text-sm font-medium mb-10 shadow-sm animate-fade-in">
@@ -98,7 +98,7 @@ export default function HomePage() {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Button variant="hero" size="xl" asChild>
                 <Link to="/how-it-works">
-                  See How Mynxt Works
+                  See How MyNxt Works
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
@@ -127,14 +127,14 @@ export default function HomePage() {
             </div>
             <div className="mt-10 pt-8 border-t border-border/30">
               <p className="text-primary font-medium">
-                Mynxt exists to bring structure, clarity, and continuity to everyday life responsibilities.
+                MyNxt exists to bring structure, clarity, and continuity to everyday life responsibilities.
               </p>
             </div>
           </AnimatedSection>
         </div>
       </section>
 
-      {/* Section 3: What Mynxt Helps You Do */}
+      {/* Section 3: What MyNxt Helps You Do */}
       <section className="py-20 md:py-32">
         <div className="container mx-auto px-4 md:px-6">
           <AnimatedSection>
@@ -174,7 +174,7 @@ export default function HomePage() {
               Everything is organised as Life Events.
             </h2>
             <p className="text-muted-foreground text-lg mb-4">
-              Mynxt structures life responsibilities into Life Events.
+              MyNxt structures life responsibilities into Life Events.
             </p>
             <p className="text-muted-foreground text-lg mb-8">
               Each Life Event brings together information, people, and rules in a clear and organised way.
@@ -204,7 +204,7 @@ export default function HomePage() {
               Continuity works quietly in the background.
             </h2>
             <p className="text-muted-foreground text-lg mb-8">
-              Mynxt includes continuity mechanisms that help ensure responsibilities
+              MyNxt includes continuity mechanisms that help ensure responsibilities
               are handled when you're unavailable.
             </p>
             <div className="flex flex-col md:flex-row items-center justify-center gap-4 text-sm text-muted-foreground/80">
@@ -222,24 +222,24 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Section 6: What Makes Mynxt Different */}
+      {/* Section 6: What Makes MyNxt Different */}
       <section className="py-20 md:py-32 surface-dark">
         <div className="container mx-auto px-4 md:px-6">
           <AnimatedSection>
             <h2 className="text-3xl md:text-4xl font-bold text-center text-foreground mb-16">
-              What Makes Mynxt Different
+              What Makes MyNxt Different
             </h2>
           </AnimatedSection>
 
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            {/* Mynxt DOES */}
+            {/* MyNxt DOES */}
             <AnimatedSection delay={100}>
               <div className="bg-primary/5 border border-primary/20 rounded-xl p-8">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center">
                     <CheckCircle className="h-5 w-5 text-primary" />
                   </div>
-                  <h3 className="text-xl font-semibold text-foreground">Mynxt DOES</h3>
+                  <h3 className="text-xl font-semibold text-foreground">MyNxt DOES</h3>
                 </div>
                 <ul className="space-y-4">
                   {[
@@ -257,14 +257,14 @@ export default function HomePage() {
               </div>
             </AnimatedSection>
 
-            {/* Mynxt DOES NOT */}
+            {/* MyNxt DOES NOT */}
             <AnimatedSection delay={200}>
               <div className="bg-muted/30 border border-border/50 rounded-xl p-8">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="w-10 h-10 rounded-full bg-muted flex items-center justify-center">
                     <XCircle className="h-5 w-5 text-muted-foreground" />
                   </div>
-                  <h3 className="text-xl font-semibold text-foreground">Mynxt DOES NOT</h3>
+                  <h3 className="text-xl font-semibold text-foreground">MyNxt DOES NOT</h3>
                 </div>
                 <ul className="space-y-4">
                   {[
@@ -293,7 +293,7 @@ export default function HomePage() {
               Built with care and responsibility.
             </h2>
             <p className="text-muted-foreground text-lg mb-8">
-              Mynxt is designed with security, consent, and restraint at its core.
+              MyNxt is designed with security, consent, and restraint at its core.
               Access is controlled, actions are logged, and intent is respected at every step.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">

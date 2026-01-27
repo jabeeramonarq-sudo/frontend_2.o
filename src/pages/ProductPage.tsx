@@ -18,14 +18,14 @@ export default function ProductPage() {
     return (
         <Layout>
             <SEO
-                title="Mynxt - Life's Continuity Companion"
-                description="Mynxt by Amonarq is your personal continuity companion. Organise important information, set execution rules, and ensure your loved ones are supported."
+                title="MyNxt - Life's Continuity Companion"
+                description="MyNxt by Amonarq is your personal continuity companion. Organise important information, set execution rules, and ensure your loved ones are supported."
                 schema={{
                     "@context": "https://schema.org",
                     "@graph": [
                         {
                             "@type": "SoftwareApplication",
-                            "name": "Mynxt",
+                            "name": "MyNxt",
                             "operatingSystem": "Web, Android, iOS",
                             "applicationCategory": "ProductivityApplication, SecurityApplication",
                             "description": "A continuity-first platform designed to organize and protect life responsibilities through secure, consent-based systems.",
@@ -78,7 +78,7 @@ export default function ProductPage() {
                                 <div className="mb-8 animate-float">
                                     <img
                                         src="/mynxt-logo.png"
-                                        alt="Mynxt Logo"
+                                        alt="MyNxt Logo"
                                         className="h-14 md:h-20 w-auto object-contain drop-shadow-xl transition-transform duration-500 group-hover:scale-105"
                                     />
                                 </div>
@@ -89,7 +89,7 @@ export default function ProductPage() {
                                 </h1>
 
                                 <p className="text-base md:text-xl text-muted-foreground max-w-xl mx-auto mb-10 leading-relaxed font-light">
-                                    Mynxt is a premium continuity platform by <span className="text-foreground font-medium">Amonarq</span>.
+                                    MyNxt is a premium continuity platform by <span className="text-foreground font-medium">Amonarq</span>.
                                     Protect your intent, organise your responsibilities, and bridge the gap between today and tomorrow.
                                 </p>
 
@@ -98,7 +98,7 @@ export default function ProductPage() {
                                         <Link to="/contact">Request Early Access</Link>
                                     </Button>
                                     <Button size="lg" variant="outline" className="rounded-full px-8 backdrop-blur-md border-border/60 hover:bg-muted/40 transition-all duration-300" asChild>
-                                        <Link to="/how-it-works">Discover Mynxt</Link>
+                                        <Link to="/how-it-works">Discover MyNxt</Link>
                                     </Button>
                                 </div>
                             </div>
@@ -121,7 +121,7 @@ export default function ProductPage() {
                                 A platform for continuity.
                             </h2>
                             <p className="text-muted-foreground text-lg mb-8">
-                                Unlike traditional storage apps, Mynxt is designed around the concept of **Life Events**.
+                                Unlike traditional storage apps, MyNxt is designed around the concept of **Life Events**.
                                 It doesn't just store data; it maps out who needs to know what, when they need to know it,
                                 and the rules that must be followed for access.
                             </p>
@@ -180,7 +180,7 @@ export default function ProductPage() {
                     <AnimatedSection className="text-center max-w-3xl mx-auto mb-16">
                         <h2 className="text-3xl md:text-5xl font-bold mb-6">Designed for the real world.</h2>
                         <p className="text-muted-foreground text-lg">
-                            Every feature in Mynxt is built to solve actual challenges encountered when Managing
+                            Every feature in MyNxt is built to solve actual challenges encountered when Managing
                             life's most critical responsibilities.
                         </p>
                     </AnimatedSection>

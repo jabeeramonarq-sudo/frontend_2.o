@@ -150,8 +150,8 @@ export default function ContactPage() {
                     <address className="text-muted-foreground not-italic text-sm leading-relaxed">
                       Amonarq Systems Private Limited<br />
                       4-578 & Row House, Prasanth Nagar,<br />
-                      Madanapalle, Andhra Pradesh<br />
-                      PIN-517325, India
+                      Madanapalle, Andhra Pradesh,<br />
+                      PIN-517325, India.
                     </address>
                   </div>
                 </div>

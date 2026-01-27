@@ -12,7 +12,7 @@ export default function TermsOfServicePage() {
         <Layout>
             <SEO
                 title="Terms of Service"
-                description="These Terms govern the use of Mynxt, a continuity execution platform operated by amonarq."
+                description="These Terms govern the use of MyNxt, a continuity execution platform operated by Amonarq."
                 schema={{
                     "@context": "https://schema.org",
                     "@graph": [
@@ -55,7 +55,7 @@ export default function TermsOfServicePage() {
                         <div className="prose prose-invert max-w-none space-y-12 text-muted-foreground leading-relaxed">
                             <section>
                                 <p>
-                                    These Terms govern the use of Mynxt, a continuity execution platform operated by Amonarq. By accessing or using Mynxt, you agree to these Terms.
+                                    These Terms govern the use of MyNxt, a continuity execution platform operated by Amonarq. By accessing or using MyNxt, you agree to these Terms.
                                 </p>
                             </section>
 
@@ -63,14 +63,14 @@ export default function TermsOfServicePage() {
 
                             <section>
                                 <h2 className="text-2xl font-semibold text-foreground mb-6">1. Nature of the Service</h2>
-                                <p className="mb-4">Mynxt is a continuity execution platform, not:</p>
+                                <p className="mb-4">MyNxt is a continuity execution platform, not:</p>
                                 <ul className="list-disc pl-5 space-y-2">
                                     <li>A digital locker or vault</li>
                                     <li>A password manager</li>
                                     <li>A legal advisory or decision-making service</li>
                                 </ul>
                                 <p className="mt-4">
-                                    Mynxt enables users to define rules and instructions that may be executed under specific conditions.
+                                    MyNxt enables users to define rules and instructions that may be executed under specific conditions.
                                 </p>
                             </section>
 
@@ -93,7 +93,7 @@ export default function TermsOfServicePage() {
 
                             <section>
                                 <h2 className="text-2xl font-semibold text-foreground mb-6">3. No Guaranteed Outcomes</h2>
-                                <p className="mb-4">Mynxt facilitates execution workflows but:</p>
+                                <p className="mb-4">MyNxt facilitates execution workflows but:</p>
                                 <ul className="list-disc pl-5 space-y-2">
                                     <li>Does not guarantee legal enforceability</li>
                                     <li>Does not replace wills, legal documents, or professional advice</li>
@@ -137,7 +137,7 @@ export default function TermsOfServicePage() {
                                 <p className="mb-4">To the maximum extent permitted by law:</p>
                                 <ul className="list-disc pl-5 space-y-2">
                                     <li>Amonarq shall not be liable for indirect or consequential damages</li>
-                                    <li>Use of Mynxt is at the user’s own risk</li>
+                                    <li>Use of MyNxt is at the user’s own risk</li>
                                 </ul>
                             </section>
 

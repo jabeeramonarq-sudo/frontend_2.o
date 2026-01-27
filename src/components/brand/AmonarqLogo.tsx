@@ -16,12 +16,12 @@ export function AmonarqLogo({ className = "", showWordmark = true }: AmonarqLogo
   );
 }
 
-export function MynxtLogo({ className = "" }: { className?: string }) {
+export function MyNxtLogo({ className = "" }: { className?: string }) {
   return (
     <div className={`flex items-center gap-2 ${className}`}>
       <img
         src="/mynxt-logo.png"
-        alt="Mynxt Logo"
+        alt="MyNxt Logo"
         className="h-8 md:h-10 w-auto object-contain"
       />
     </div>
