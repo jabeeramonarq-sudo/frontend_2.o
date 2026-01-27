@@ -10,6 +10,28 @@ export default function TermsOfServicePage() {
             <SEO
                 title="Terms of Service"
                 description="These Terms govern the use of Mynxt, a continuity execution platform operated by amonarq."
+                schema={{
+                    "@context": "https://schema.org",
+                    "@graph": [
+                        {
+                            "@type": "BreadcrumbList",
+                            "itemListElement": [
+                                {
+                                    "@type": "ListItem",
+                                    "position": 1,
+                                    "name": "Home",
+                                    "item": "https://amonarq.com"
+                                },
+                                {
+                                    "@type": "ListItem",
+                                    "position": 2,
+                                    "name": "Terms of Service",
+                                    "item": "https://amonarq.com/terms"
+                                }
+                            ]
+                        }
+                    ]
+                }}
             />
             <section className="py-20 md:py-32">
                 <div className="container mx-auto px-4 md:px-6">

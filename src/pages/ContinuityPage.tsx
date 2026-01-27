@@ -11,6 +11,28 @@ export default function ContinuityPage() {
       <SEO
         title="Continuity & Triggers"
         description="Learn how Mynxt ensures responsibilities don't get stuck through smart continuity checks and predefined triggers."
+        schema={{
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "Home",
+                  "item": "https://amonarq.com"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "name": "Continuity",
+                  "item": "https://amonarq.com/continuity"
+                }
+              ]
+            }
+          ]
+        }}
       />
       {/* Hero */}
       <section className="py-20 md:py-32 relative overflow-hidden">

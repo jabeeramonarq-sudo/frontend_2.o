@@ -9,6 +9,28 @@ export default function ConsentApprovalPage() {
             <SEO
                 title="Consent & Approval"
                 description="Mynxt builds trust through explicit authorization, clear intent, and a robust consent framework."
+                schema={{
+                    "@context": "https://schema.org",
+                    "@graph": [
+                        {
+                            "@type": "BreadcrumbList",
+                            "itemListElement": [
+                                {
+                                    "@type": "ListItem",
+                                    "position": 1,
+                                    "name": "Home",
+                                    "item": "https://amonarq.com"
+                                },
+                                {
+                                    "@type": "ListItem",
+                                    "position": 2,
+                                    "name": "Consent & Approval",
+                                    "item": "https://amonarq.com/consent"
+                                }
+                            ]
+                        }
+                    ]
+                }}
             />
             {/* Hero / Header Section */}
             <section className="py-20 md:py-32 relative overflow-hidden">

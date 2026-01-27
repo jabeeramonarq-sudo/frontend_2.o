@@ -20,6 +20,43 @@ export default function ProductPage() {
             <SEO
                 title="Mynxt - Life's Continuity Companion"
                 description="Mynxt by Amonarq is your personal continuity companion. Organise important information, set execution rules, and ensure your loved ones are supported."
+                schema={{
+                    "@context": "https://schema.org",
+                    "@graph": [
+                        {
+                            "@type": "SoftwareApplication",
+                            "name": "Mynxt",
+                            "operatingSystem": "Web, Android, iOS",
+                            "applicationCategory": "ProductivityApplication, SecurityApplication",
+                            "description": "A continuity-first platform designed to organize and protect life responsibilities through secure, consent-based systems.",
+                            "offers": {
+                                "@type": "Offer",
+                                "price": "0.00",
+                                "priceCurrency": "INR"
+                            },
+                            "publisher": {
+                                "@id": "https://amonarq.com/#organization"
+                            }
+                        },
+                        {
+                            "@type": "BreadcrumbList",
+                            "itemListElement": [
+                                {
+                                    "@type": "ListItem",
+                                    "position": 1,
+                                    "name": "Home",
+                                    "item": "https://amonarq.com"
+                                },
+                                {
+                                    "@type": "ListItem",
+                                    "position": 2,
+                                    "name": "Product",
+                                    "item": "https://amonarq.com/product"
+                                }
+                            ]
+                        }
+                    ]
+                }}
             />
             {/* Hero Section - Refined Proportions */}
             <section className="relative pt-24 pb-16 md:pt-32 md:pb-24 overflow-hidden">

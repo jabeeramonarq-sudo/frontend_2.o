@@ -11,6 +11,28 @@ export default function LifeEventsPage() {
       <SEO
         title="Life Events"
         description="A Life Event is a structured way to organise specific areas of life responsibility, information, and people."
+        schema={{
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "Home",
+                  "item": "https://amonarq.com"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "name": "Life Events",
+                  "item": "https://amonarq.com/life-events"
+                }
+              ]
+            }
+          ]
+        }}
       />
       {/* Hero */}
       <section className="py-20 md:py-32 relative overflow-hidden">

@@ -10,7 +10,29 @@ export default function SecurityPage() {
     <Layout>
       <SEO
         title="Security & Trust"
-        description="Mynxt is built with responsibility at its foundation, ensuring your data is protected and your intentions are respected."
+        description="Mynxt is built with responsibility at its foundation. Learn about our zero-knowledge security, consent-driven access, and tamper-proof logs."
+        schema={{
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "Home",
+                  "item": "https://amonarq.com"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "name": "Security",
+                  "item": "https://amonarq.com/security"
+                }
+              ]
+            }
+          ]
+        }}
       />
       {/* Hero */}
       <section className="py-20 md:py-32 relative overflow-hidden">

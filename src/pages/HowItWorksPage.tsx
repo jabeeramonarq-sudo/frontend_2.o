@@ -47,6 +47,44 @@ export default function HowItWorksPage() {
       <SEO
         title="How It Works"
         description="Learn how Mynxt works through a simple flow to organise, protect, and ensure continuity for your life responsibilities."
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "HowTo",
+          "name": "How Mynxt Works",
+          "description": "A simple flow to organise, protect, and ensure continuity for your life responsibilities.",
+          "step": [
+            {
+              "@type": "HowToStep",
+              "name": "Organise",
+              "text": "Create Life Events to organise responsibilities and information.",
+              "position": 1
+            },
+            {
+              "@type": "HowToStep",
+              "name": "Define Roles",
+              "text": "Add people and define how they can help.",
+              "position": 2
+            },
+            {
+              "@type": "HowToStep",
+              "name": "Set Rules",
+              "text": "Decide what is shared, when, and under what conditions.",
+              "position": 3
+            },
+            {
+              "@type": "HowToStep",
+              "name": "Continuity Protection",
+              "text": "Enable continuity checks that work quietly in the background.",
+              "position": 4
+            },
+            {
+              "@type": "HowToStep",
+              "name": "Controlled Execution",
+              "text": "When needed, actions follow predefined rules and confirmations.",
+              "position": 5
+            }
+          ]
+        }}
       />
       {/* Hero */}
       <section className="py-20 md:py-32 relative overflow-hidden">

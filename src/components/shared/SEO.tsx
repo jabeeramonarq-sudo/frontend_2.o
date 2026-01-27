@@ -7,6 +7,7 @@ interface SEOProps {
     ogType?: string;
     ogImage?: string;
     twitterCard?: string;
+    schema?: object | object[];
 }
 
 export const SEO = ({
@@ -16,10 +17,11 @@ export const SEO = ({
     ogType = "website",
     ogImage = "/og-image.png",
     twitterCard = "summary_large_image",
+    schema,
 }: SEOProps) => {
     useEffect(() => {
-        const siteName = "amonarq";
-        const fullTitle = title ? `${title} | ${siteName}` : `amonarq - Designing Systems for Continuity`;
+        const siteName = "Amonarq";
+        const fullTitle = title ? `${title} | ${siteName}` : `Amonarq - Designing Systems for Continuity`;
 
         // Update Title
         document.title = fullTitle;
@@ -27,7 +29,7 @@ export const SEO = ({
         // Update Meta Description
         const metaDescription = document.querySelector('meta[name="description"]');
         if (metaDescription) {
-            metaDescription.setAttribute("content", description || "amonarq builds digital products focused on reducing chaos, protecting trust, and enabling uninterrupted human flow.");
+            metaDescription.setAttribute("content", description || "Amonarq builds digital products focused on reducing chaos, protecting trust, and enabling uninterrupted human flow.");
         }
 
         // Update Canonical
@@ -72,7 +74,24 @@ export const SEO = ({
         updateTwitter("twitter:description", description || "amonarq builds digital products focused on reducing chaos, protecting trust, and enabling uninterrupted human flow.");
         updateTwitter("twitter:image", window.location.origin + ogImage);
 
-    }, [title, description, canonical, ogType, ogImage, twitterCard]);
+        // Update Structured Data (JSON-LD)
+        let scriptSchema = document.querySelector('script[type="application/ld+json"]#structured-data');
+        if (schema) {
+            if (!scriptSchema) {
+                scriptSchema = document.createElement('script');
+                scriptSchema.setAttribute('type', 'application/ld+json');
+                scriptSchema.id = 'structured-data';
+                document.head.appendChild(scriptSchema);
+            }
+            scriptSchema.textContent = JSON.stringify(schema);
+        } else if (scriptSchema) {
+            // If no schema is provided, keep the existing one or clear it?
+            // Usually, we want to remove it if the page doesn't define it to avoid stale global data
+            // But index.html had one. We'll handle removal to ensure clean per-page SEO.
+            scriptSchema.remove();
+        }
+
+    }, [title, description, canonical, ogType, ogImage, twitterCard, schema]);
 
     return null;
 };

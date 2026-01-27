@@ -12,6 +12,35 @@ export default function AboutPage() {
       <SEO
         title="About Amonarq"
         description="Amonarq builds systems focused on life continuity. We believe technology should reduce chaos, respect intent, and support people during critical moments."
+        schema={{
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "AboutPage",
+              "mainEntity": {
+                "@id": "https://amonarq.com/#organization"
+              },
+              "description": "Amonarq builds systems focused on life continuity. We believe technology should reduce chaos, respect intent, and support people during critical moments."
+            },
+            {
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "Home",
+                  "item": "https://amonarq.com"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "name": "About",
+                  "item": "https://amonarq.com/about"
+                }
+              ]
+            }
+          ]
+        }}
       />
       {/* Hero */}
       <section className="py-20 md:py-32 relative overflow-hidden">

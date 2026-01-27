@@ -16,6 +16,57 @@ export default function HomePage() {
       <SEO
         title="Home"
         description="Amonarq builds digital products focused on reducing chaos, protecting trust, and enabling uninterrupted human flow. Mynxt ensures your life responsibilities are handled smoothly."
+        schema={{
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "Organization",
+              "@id": "https://amonarq.com/#organization",
+              "name": "amonarq",
+              "url": "https://amonarq.com",
+              "logo": "https://amonarq.com/logo.png",
+              "description": "amonarq builds digital products focused on reducing chaos, protecting trust, and enabling uninterrupted human flow.",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "4-578 & Row House, Prasanth Nagar",
+                "addressLocality": "Madanapalle",
+                "addressRegion": "Andhra Pradesh",
+                "postalCode": "517325",
+                "addressCountry": "IN"
+              },
+              "contactPoint": {
+                "@type": "ContactPoint",
+                "email": "contact@amonarq.com",
+                "contactType": "customer support"
+              }
+            },
+            {
+              "@type": "WebSite",
+              "@id": "https://amonarq.com/#website",
+              "url": "https://amonarq.com",
+              "name": "amonarq",
+              "publisher": {
+                "@id": "https://amonarq.com/#organization"
+              },
+              "potentialAction": {
+                "@type": "SearchAction",
+                "target": "https://amonarq.com/search?q={search_term_string}",
+                "query-input": "required name=search_term_string"
+              }
+            },
+            {
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "Home",
+                  "item": "https://amonarq.com"
+                }
+              ]
+            }
+          ]
+        }}
       />
       {/* Section 1: Hero */}
       <section className="relative min-h-[90vh] flex items-center overflow-hidden">

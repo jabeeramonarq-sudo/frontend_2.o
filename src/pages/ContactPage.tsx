@@ -64,6 +64,35 @@ export default function ContactPage() {
       <SEO
         title="Contact Us"
         description="Get in touch with Amonarq to learn more about Mynxt, request early access, or discuss business opportunities."
+        schema={{
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "ContactPage",
+              "mainEntity": {
+                "@id": "https://amonarq.com/#organization"
+              },
+              "description": "Get in touch with Amonarq to learn more about Mynxt, request early access, or discuss business opportunities."
+            },
+            {
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "Home",
+                  "item": "https://amonarq.com"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "name": "Contact",
+                  "item": "https://amonarq.com/contact"
+                }
+              ]
+            }
+          ]
+        }}
       />
       {/* Hero */}
       <section className="py-20 md:py-32 relative overflow-hidden">

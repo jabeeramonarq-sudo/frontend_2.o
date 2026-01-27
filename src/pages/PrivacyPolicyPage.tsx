@@ -14,6 +14,28 @@ export default function PrivacyPolicyPage() {
             <SEO
                 title="Privacy Policy"
                 description="Our Privacy Policy explains how we collect, use, store, and protect information when you use Mynxt."
+                schema={{
+                    "@context": "https://schema.org",
+                    "@graph": [
+                        {
+                            "@type": "BreadcrumbList",
+                            "itemListElement": [
+                                {
+                                    "@type": "ListItem",
+                                    "position": 1,
+                                    "name": "Home",
+                                    "item": "https://amonarq.com"
+                                },
+                                {
+                                    "@type": "ListItem",
+                                    "position": 2,
+                                    "name": "Privacy Policy",
+                                    "item": "https://amonarq.com/privacy"
+                                }
+                            ]
+                        }
+                    ]
+                }}
             />
             <section className="py-20 md:py-32">
                 <div className="container mx-auto px-4 md:px-6">
