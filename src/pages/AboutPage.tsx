@@ -110,8 +110,8 @@ export default function AboutPage() {
                     <Eye className="h-6 w-6" />
                   </div>
                   <h3 className="text-2xl font-bold text-foreground">Our Vision</h3>
-                  <p className="text-muted-foreground leading-relaxed">
-                    To be the most trusted global platform for digital life continuity, ensuring that every individual's intentions are respected and their loved ones are supported, regardless of the circumstances. We envision a world where technology acts as a reliable bridge across generations.
+                  <p className="text-muted-foreground leading-relaxed italic">
+                    "To help life continue smoothly, even when someone is unavailable."
                   </p>
                 </div>
 
@@ -120,9 +120,24 @@ export default function AboutPage() {
                     <Heart className="h-6 w-6" />
                   </div>
                   <h3 className="text-2xl font-bold text-foreground">Our Philosophy</h3>
-                  <p className="text-muted-foreground leading-relaxed">
-                    We believe in <strong>Security by Constraint</strong>, <strong>Consent by Design</strong>, and <strong>Clarity over Complexity</strong>. Technology should serve the human experience, not complicate it. Our approach is rooted in respect for user autonomy and radical transparency in how continuity instructions are managed.
-                  </p>
+                  <ul className="space-y-3 text-muted-foreground leading-relaxed">
+                    <li className="flex items-center gap-2">
+                      <span className="h-1.5 w-1.5 rounded-full bg-secondary shrink-0" />
+                      Reduce confusion
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="h-1.5 w-1.5 rounded-full bg-secondary shrink-0" />
+                      Respect consent
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="h-1.5 w-1.5 rounded-full bg-secondary shrink-0" />
+                      Build with restraint
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="h-1.5 w-1.5 rounded-full bg-secondary shrink-0" />
+                      Focus on real-world problems
+                    </li>
+                  </ul>
                 </div>
               </div>
             </div>
