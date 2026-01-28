@@ -3,36 +3,41 @@ import { Layout } from "@/components/layout/Layout";
 import { SEO } from "@/components/shared/SEO";
 import { AnimatedSection } from "@/components/shared/AnimatedSection";
 import { Button } from "@/components/ui/button";
+import { useContent } from "@/hooks/useContent";
+import { Skeleton } from "@/components/ui/skeleton";
 import { Shield, Lock, Eye, FileCheck, ArrowRight } from "lucide-react";
 
 export default function SecurityPage() {
+  const { getContent, isLoading, sections } = useContent();
+
+  const hero = getContent('security-hero');
+  const approach = getContent('security-approach-heading');
+  const commitment = getContent('security-commitment');
+  const badge = getContent('security-badge-text');
+  const cta = getContent('security-cta');
+
+  const approachItems = sections
+    .filter(s => s.sectionId.startsWith('security-item-'))
+    .sort((a, b) => a.order - b.order);
+
+  const icons = [Lock, Eye, FileCheck, Shield];
+
+  if (isLoading) {
+    return (
+      <Layout>
+        <div className="container mx-auto px-4 py-20">
+          <Skeleton className="h-12 w-3/4 mx-auto mb-6" />
+          <Skeleton className="h-64 w-full" />
+        </div>
+      </Layout>
+    );
+  }
+
   return (
     <Layout>
       <SEO
         title="Security & Trust"
-        description="MyNxt is built with responsibility at its foundation. Learn about our zero-knowledge security, consent-driven access, and tamper-proof logs."
-        schema={{
-          "@context": "https://schema.org",
-          "@graph": [
-            {
-              "@type": "BreadcrumbList",
-              "itemListElement": [
-                {
-                  "@type": "ListItem",
-                  "position": 1,
-                  "name": "Home",
-                  "item": "https://amonarq.com"
-                },
-                {
-                  "@type": "ListItem",
-                  "position": 2,
-                  "name": "Security",
-                  "item": "https://amonarq.com/security"
-                }
-              ]
-            }
-          ]
-        }}
+        description="MyNxt is built with responsibility at its foundation."
       />
       {/* Hero */}
       <section className="py-20 md:py-32 relative overflow-hidden">
@@ -41,14 +46,12 @@ export default function SecurityPage() {
         <div className="container relative mx-auto px-4 md:px-6">
           <AnimatedSection className="max-w-3xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
-              Security & Trust
+              {hero.title}
             </h1>
-            <p className="text-xl text-muted-foreground font-light mb-8">
-              <b>MyNxt does not claim ownership of user data or digital assets.</b>  <br />
-              The platform facilitates consent-based continuity instructions and controlled access flows, executed only under predefined user conditions.
-
+            <p className="text-xl text-muted-foreground font-light mb-8 italic">
+              <b>{hero.subtitle}</b><br />
+              {hero.body}
             </p>
-
           </AnimatedSection>
         </div>
       </section>
@@ -64,58 +67,31 @@ export default function SecurityPage() {
             </div>
 
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-8 text-center">
-              Our Approach
+              {approach.title}
             </h2>
 
             <p className="text-muted-foreground text-lg text-center mb-12">
-              MyNxt is built with security and responsibility at its foundation.
+              {approach.subtitle}
             </p>
 
             <div className="grid sm:grid-cols-2 gap-6">
-              <div className="bg-card border border-border/50 rounded-xl p-6 hover:border-primary/30 transition-colors">
-                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
-                  <Lock className="h-6 w-6 text-primary" />
-                </div>
-                <h3 className="font-semibold text-foreground mb-2">Data Protection</h3>
-                <p className="text-muted-foreground text-sm">
-                  Your data is encrypted at rest and in transit using industry-standard protocols.
-                </p>
-              </div>
-
-              <div className="bg-card border border-border/50 rounded-xl p-6 hover:border-primary/30 transition-colors">
-                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
-                  <Eye className="h-6 w-6 text-primary" />
-                </div>
-                <h3 className="font-semibold text-foreground mb-2">Controlled Access</h3>
-                <p className="text-muted-foreground text-sm">
-                  Strict access controls ensure only authorized actions can be performed.
-                </p>
-              </div>
-
-              <div className="bg-card border border-border/50 rounded-xl p-6 hover:border-primary/30 transition-colors">
-                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
-                  <FileCheck className="h-6 w-6 text-primary" />
-                </div>
-                <h3 className="font-semibold text-foreground mb-2">Clear Audit Trails</h3>
-                <p className="text-muted-foreground text-sm">
-                  Every action is logged with timestamps for complete transparency.
-                </p>
-              </div>
-
-              <div className="bg-card border border-border/50 rounded-xl p-6 hover:border-primary/30 transition-colors">
-                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
-                  <Shield className="h-6 w-6 text-primary" />
-                </div>
-                <h3 className="font-semibold text-foreground mb-2">Responsible Execution</h3>
-                <p className="text-muted-foreground text-sm">
-                  Actions follow predefined rules with multiple verification steps.
-                </p>
-
-              </div>
+              {approachItems.map((item, idx) => {
+                const Icon = icons[idx % icons.length];
+                return (
+                  <div key={item._id} className="bg-card border border-border/50 rounded-xl p-6 hover:border-primary/30 transition-colors">
+                    <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
+                      <Icon className="h-6 w-6 text-primary" />
+                    </div>
+                    <h3 className="font-semibold text-foreground mb-2">{item.title}</h3>
+                    <p className="text-muted-foreground text-sm">
+                      {item.body}
+                    </p>
+                  </div>
+                );
+              })}
             </div>
           </AnimatedSection>
         </div>
-
       </section>
 
       {/* Trust Statement */}
@@ -123,17 +99,14 @@ export default function SecurityPage() {
         <div className="container mx-auto px-4 md:px-6">
           <AnimatedSection className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-              Our Commitment
+              {commitment.title}
             </h2>
             <p className="text-muted-foreground text-lg mb-8">
-              Trust isn't claimed—it's earned. We're committed to transparent practices,
-              robust security, and respecting your privacy at every step. When you use
-              MyNxt, you can be confident that your data is protected and your intentions
-              are respected.
+              {commitment.body}
             </p>
             <div className="inline-flex items-center gap-3 text-sm font-medium text-primary bg-primary/10 border border-primary/20 px-6 py-3 rounded-full shadow-sm hover:bg-primary/15 transition-colors">
               <Shield className="h-5 w-5" />
-              <span>Designed in alignment with applicable data protection norms</span>
+              <span>{badge.title}</span>
             </div>
           </AnimatedSection>
         </div>
@@ -144,10 +117,10 @@ export default function SecurityPage() {
         <div className="container mx-auto px-4 md:px-6">
           <AnimatedSection className="max-w-2xl mx-auto text-center">
             <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
-              Ready to learn more?
+              {cta.title}
             </h2>
             <p className="text-muted-foreground mb-8">
-              Get in touch to learn more about MyNxt or request early access.
+              {cta.body}
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Button variant="hero" size="lg" asChild>

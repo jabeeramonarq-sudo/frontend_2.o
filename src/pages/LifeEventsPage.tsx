@@ -3,36 +3,42 @@ import { Layout } from "@/components/layout/Layout";
 import { SEO } from "@/components/shared/SEO";
 import { AnimatedSection } from "@/components/shared/AnimatedSection";
 import { Button } from "@/components/ui/button";
+import { useContent } from "@/hooks/useContent";
+import { Skeleton } from "@/components/ui/skeleton";
 import { FileText, Users, Settings, Eye, Shield, Heart, ArrowRight } from "lucide-react";
 
 export default function LifeEventsPage() {
+  const { getContent, isLoading, sections } = useContent();
+
+  const hero = getContent('life-events-hero');
+  const what = getContent('life-event-what');
+  const part1 = getContent('life-event-part-1');
+  const part2 = getContent('life-event-part-2');
+  const whyHeading = getContent('life-events-matter-heading');
+  const cta = getContent('life-events-cta');
+
+  const matters = sections
+    .filter(s => s.sectionId.startsWith('life-events-matter-'))
+    .sort((a, b) => a.order - b.order);
+
+  const icons = [Eye, Shield, Heart];
+
+  if (isLoading) {
+    return (
+      <Layout>
+        <div className="container mx-auto px-4 py-20">
+          <Skeleton className="h-12 w-3/4 mx-auto mb-6" />
+          <Skeleton className="h-64 w-full" />
+        </div>
+      </Layout>
+    );
+  }
+
   return (
     <Layout>
       <SEO
         title="Life Events"
         description="A Life Event is a structured way to organise specific areas of life responsibility, information, and people."
-        schema={{
-          "@context": "https://schema.org",
-          "@graph": [
-            {
-              "@type": "BreadcrumbList",
-              "itemListElement": [
-                {
-                  "@type": "ListItem",
-                  "position": 1,
-                  "name": "Home",
-                  "item": "https://amonarq.com"
-                },
-                {
-                  "@type": "ListItem",
-                  "position": 2,
-                  "name": "Life Events",
-                  "item": "https://amonarq.com/life-events"
-                }
-              ]
-            }
-          ]
-        }}
       />
       {/* Hero */}
       <section className="py-20 md:py-32 relative overflow-hidden">
@@ -41,10 +47,10 @@ export default function LifeEventsPage() {
         <div className="container relative mx-auto px-4 md:px-6">
           <AnimatedSection className="max-w-3xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
-              Life Events
+              {hero.title}
             </h1>
             <p className="text-xl text-muted-foreground font-light">
-              The core building block of MyNxt.
+              {hero.subtitle}
             </p>
           </AnimatedSection>
         </div>
@@ -55,10 +61,10 @@ export default function LifeEventsPage() {
         <div className="container mx-auto px-4 md:px-6">
           <AnimatedSection className="max-w-3xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-8 text-center">
-              What is a Life Event?
+              {what.title}
             </h2>
             <p className="text-muted-foreground text-lg text-center mb-12">
-              A Life Event is a structured way to organise a specific area of life responsibility.
+              {what.body}
             </p>
 
             <div className="bg-card border border-border/50 rounded-2xl p-8 md:p-12 max-w-3xl mx-auto shadow-sm">
@@ -70,15 +76,15 @@ export default function LifeEventsPage() {
                   <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-5 group-hover:bg-primary/20 transition-colors">
                     <FileText className="h-8 w-8 text-primary" />
                   </div>
-                  <h4 className="font-bold text-foreground mb-2 text-xl">Relevant Information</h4>
-                  <p className="text-muted-foreground leading-relaxed">Documents, details, and context</p>
+                  <h4 className="font-bold text-foreground mb-2 text-xl">{part1.title}</h4>
+                  <p className="text-muted-foreground leading-relaxed">{part1.body}</p>
                 </div>
                 <div className="text-center group">
                   <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-5 group-hover:bg-primary/20 transition-colors">
                     <Settings className="h-8 w-8 text-primary" />
                   </div>
-                  <h4 className="font-bold text-foreground mb-2 text-xl">Clear Rules</h4>
-                  <p className="text-muted-foreground leading-relaxed">Access and sharing conditions</p>
+                  <h4 className="font-bold text-foreground mb-2 text-xl">{part2.title}</h4>
+                  <p className="text-muted-foreground leading-relaxed">{part2.body}</p>
                 </div>
               </div>
               <p className="text-primary text-center mt-12 font-bold text-lg tracking-tight">
@@ -94,52 +100,29 @@ export default function LifeEventsPage() {
         <div className="container mx-auto px-4 md:px-6">
           <AnimatedSection>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-12 text-center">
-              Why Life Events Matter
+              {whyHeading.title}
             </h2>
           </AnimatedSection>
 
           <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-            <AnimatedSection delay={100}>
-              <div className="bg-card border border-border/50 rounded-xl p-8 text-center hover:border-primary/30 transition-colors h-full">
-                <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-6">
-                  <Eye className="h-7 w-7 text-primary" />
-                </div>
-                <h3 className="text-xl font-semibold text-foreground mb-3">
-                  Clarity for everyone
-                </h3>
-                <p className="text-muted-foreground">
-                  Everyone involved knows what's expected and where to find information.
-                </p>
-              </div>
-            </AnimatedSection>
-
-            <AnimatedSection delay={200}>
-              <div className="bg-card border border-border/50 rounded-xl p-8 text-center hover:border-primary/30 transition-colors h-full">
-                <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-6">
-                  <Shield className="h-7 w-7 text-primary" />
-                </div>
-                <h3 className="text-xl font-semibold text-foreground mb-3">
-                  Less confusion
-                </h3>
-                <p className="text-muted-foreground">
-                  Reduces chaos and misunderstandings during critical moments.
-                </p>
-              </div>
-            </AnimatedSection>
-
-            <AnimatedSection delay={300}>
-              <div className="bg-card border border-border/50 rounded-xl p-8 text-center hover:border-primary/30 transition-colors h-full">
-                <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-6">
-                  <Heart className="h-7 w-7 text-primary" />
-                </div>
-                <h3 className="text-xl font-semibold text-foreground mb-3">
-                  Clear intent
-                </h3>
-                <p className="text-muted-foreground">
-                  Your wishes and responsibilities are documented and respected.
-                </p>
-              </div>
-            </AnimatedSection>
+            {matters.map((item, idx) => {
+              const Icon = icons[idx % icons.length];
+              return (
+                <AnimatedSection key={item._id} delay={idx * 100}>
+                  <div className="bg-card border border-border/50 rounded-xl p-8 text-center hover:border-primary/30 transition-colors h-full">
+                    <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-6">
+                      <Icon className="h-7 w-7 text-primary" />
+                    </div>
+                    <h3 className="text-xl font-semibold text-foreground mb-3">
+                      {item.title}
+                    </h3>
+                    <p className="text-muted-foreground">
+                      {item.body}
+                    </p>
+                  </div>
+                </AnimatedSection>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -149,10 +132,10 @@ export default function LifeEventsPage() {
         <div className="container mx-auto px-4 md:px-6">
           <AnimatedSection className="max-w-2xl mx-auto text-center">
             <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
-              See how Life Events work with continuity
+              {cta.title}
             </h2>
             <p className="text-muted-foreground mb-8">
-              Learn how MyNxt ensures your Life Events are protected for the future.
+              {cta.body}
             </p>
             <Button variant="hero" size="lg" asChild>
               <Link to="/continuity">

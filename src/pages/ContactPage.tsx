@@ -6,6 +6,9 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
+import { useContent } from "@/hooks/useContent";
+import { useSettings } from "@/hooks/useSettings";
+import { Skeleton } from "@/components/ui/skeleton";
 import { Mail, MapPin, Send, CheckCircle } from "lucide-react";
 import { toast } from "sonner";
 import { z } from "zod";
@@ -18,6 +21,14 @@ const contactSchema = z.object({
 });
 
 export default function ContactPage() {
+  const { getContent, isLoading: contentLoading } = useContent();
+  const { settings, isLoading: settingsLoading } = useSettings();
+
+  const hero = getContent('contact-hero');
+  const info = getContent('contact-info-heading');
+  const earlyAccess = getContent('contact-early-access-note');
+  const success = getContent('contact-success-title');
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -52,47 +63,49 @@ export default function ContactPage() {
     }
 
     setIsSubmitting(true);
-    await new Promise((resolve) => setTimeout(resolve, 1500));
 
-    setIsSubmitting(false);
-    setIsSubmitted(true);
-    toast.success("Thank you for your interest. We'll get back to you soon.");
+    try {
+      const response = await fetch('http://localhost:5000/api/inbox/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to send message');
+      }
+
+      setIsSubmitted(true);
+      setFormData({ name: "", email: "", subject: "", message: "" });
+      toast.success("Thank you for your message. We'll get back to you soon!");
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      toast.error("Failed to send message. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
+
+  const isLoading = contentLoading || settingsLoading;
+
+  if (isLoading) {
+    return (
+      <Layout>
+        <div className="container mx-auto px-4 py-20 text-center">
+          <Skeleton className="h-12 w-1/2 mx-auto mb-6" />
+          <Skeleton className="h-64 w-full" />
+        </div>
+      </Layout>
+    );
+  }
 
   return (
     <Layout>
       <SEO
         title="Contact Us"
-        description="Get in touch with Amonarq to learn more about Mynxt, request early access, or discuss business opportunities."
-        schema={{
-          "@context": "https://schema.org",
-          "@graph": [
-            {
-              "@type": "ContactPage",
-              "mainEntity": {
-                "@id": "https://amonarq.com/#organization"
-              },
-              "description": "Get in touch with Amonarq to learn more about Mynxt, request early access, or discuss business opportunities."
-            },
-            {
-              "@type": "BreadcrumbList",
-              "itemListElement": [
-                {
-                  "@type": "ListItem",
-                  "position": 1,
-                  "name": "Home",
-                  "item": "https://amonarq.com"
-                },
-                {
-                  "@type": "ListItem",
-                  "position": 2,
-                  "name": "Contact",
-                  "item": "https://amonarq.com/contact"
-                }
-              ]
-            }
-          ]
-        }}
+        description="Get in touch with Amonarq to learn more about MyNxt, request early access, or discuss business opportunities."
       />
       {/* Hero */}
       <section className="py-20 md:py-32 relative overflow-hidden">
@@ -101,10 +114,10 @@ export default function ContactPage() {
         <div className="container relative mx-auto px-4 md:px-6">
           <AnimatedSection className="max-w-3xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
-              Contact
+              {hero.title}
             </h1>
             <p className="text-xl text-muted-foreground font-light">
-              Interested in Mynxt or early access? Get in touch with us.
+              {hero.subtitle}
             </p>
           </AnimatedSection>
         </div>
@@ -117,11 +130,10 @@ export default function ContactPage() {
             {/* Contact Info */}
             <AnimatedSection>
               <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-6">
-                Get in Touch
+                {info.title}
               </h2>
               <p className="text-muted-foreground mb-8">
-                Have a question about Mynxt, interested in early access, or want to learn
-                more about Amonarq? We'd love to hear from you.
+                {info.body}
               </p>
 
               <div className="space-y-6">
@@ -131,12 +143,8 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-foreground mb-1">Email</h3>
-                    <a href="mailto:contact@amonarq.com" className="text-muted-foreground hover:text-primary transition-colors">
-                      contact@amonarq.com
-                    </a>
-                    <br />
-                    <a href="mailto:business@amonarq.com" className="text-muted-foreground hover:text-primary transition-colors">
-                      business@amonarq.com
+                    <a href={`mailto:${settings?.contactInfo.email}`} className="text-muted-foreground hover:text-primary transition-colors">
+                      {settings?.contactInfo.email}
                     </a>
                   </div>
                 </div>
@@ -147,21 +155,18 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-foreground mb-1">Registered Office</h3>
-                    <address className="text-muted-foreground not-italic text-sm leading-relaxed">
+                    <address className="text-muted-foreground not-italic text-sm leading-relaxed whitespace-pre-line">
                       Amonarq Systems Private Limited<br />
-                      4-578 & Row House, Prasanth Nagar,<br />
-                      Madanapalle, Andhra Pradesh,<br />
-                      PIN-517325, India.
+                      {settings?.contactInfo.address}
                     </address>
                   </div>
                 </div>
               </div>
 
               <div className="mt-10 p-6 bg-primary/5 border border-primary/20 rounded-xl">
-                <h3 className="font-semibold text-foreground mb-2">Early Access</h3>
+                <h3 className="font-semibold text-foreground mb-2">{earlyAccess.title}</h3>
                 <p className="text-muted-foreground text-sm">
-                  MYNXT is currently in development. Request early access through the form
-                  to be among the first to experience it.
+                  {earlyAccess.body}
                 </p>
               </div>
             </AnimatedSection>
@@ -174,10 +179,10 @@ export default function ContactPage() {
                     <CheckCircle className="h-8 w-8 text-primary" />
                   </div>
                   <h3 className="text-xl font-semibold text-foreground mb-3">
-                    Message Sent
+                    {success.title}
                   </h3>
                   <p className="text-muted-foreground mb-6">
-                    Thank you for your interest in MYNXT. We'll get back to you as soon as possible.
+                    {success.body}
                   </p>
                   <Button
                     variant="heroOutline"

@@ -1,9 +1,21 @@
 import { Link } from "react-router-dom";
-import { AmonarqLogo } from "@/components/brand/AmonarqLogo";
-import { Mail, MapPin, Globe, Linkedin, Twitter, Github } from "lucide-react";
+import { Mail, MapPin, Globe, Linkedin, Twitter } from "lucide-react";
+import { useSettings } from "@/hooks/useSettings";
+import { Skeleton } from "@/components/ui/skeleton";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
+  const { settings, isLoading } = useSettings();
+
+  if (isLoading) {
+    return (
+      <footer className="bg-surface-dark border-t border-border/50 py-8">
+        <div className="container mx-auto px-4 md:px-6">
+          <Skeleton className="h-40 w-full" />
+        </div>
+      </footer>
+    );
+  }
 
   return (
     <footer className="bg-surface-dark border-t border-border/50 pt-16 pb-8">
@@ -13,7 +25,7 @@ export function Footer() {
           <div className="lg:col-span-5 space-y-6">
             <Link to="/" className="inline-block hover:opacity-90 transition-opacity">
               <img
-                src="/mynxt-logo.png"
+                src={settings?.logos.footer || "/mynxt-logo.png"}
                 alt="MyNxt by Amonarq"
                 className="h-14 w-auto object-contain brightness-110 contrast-125"
               />
@@ -24,12 +36,20 @@ export function Footer() {
               <span className="text-foreground font-medium ml-1">MyNxt</span> is a continuity-first digital product by Amonarq.
             </p>
             <div className="flex items-center gap-4">
-              <a href="#" className="p-2 rounded-full border border-border/50 text-muted-foreground hover:text-primary hover:border-primary/30 transition-all">
-                <Linkedin className="h-4 w-4" />
-              </a>
-              <a href="#" className="p-2 rounded-full border border-border/50 text-muted-foreground hover:text-primary hover:border-primary/30 transition-all">
-                <Twitter className="h-4 w-4" />
-              </a>
+              {settings?.socialMedia.map((social) => {
+                const Icon = social.platform === 'LinkedIn' ? Linkedin : social.platform === 'Twitter' ? Twitter : Globe;
+                return (
+                  <a
+                    key={social.platform}
+                    href={social.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-2 rounded-full border border-border/50 text-muted-foreground hover:text-primary hover:border-primary/30 transition-all"
+                  >
+                    <Icon className="h-4 w-4" />
+                  </a>
+                );
+              })}
             </div>
           </div>
 
@@ -75,14 +95,14 @@ export function Footer() {
             <ul className="space-y-4">
               <li className="flex items-start gap-3 group">
                 <MapPin className="h-5 w-5 text-primary/60 shrink-0 mt-0.5 group-hover:text-primary transition-colors" />
-                <span className="text-muted-foreground text-sm leading-relaxed">
-                  4-578 & Row House, Prasanth Nagar, Madanapalle, AP - 517325,India.
+                <span className="text-muted-foreground text-sm leading-relaxed whitespace-pre-line">
+                  {settings?.contactInfo.address}
                 </span>
               </li>
               <li className="flex items-center gap-3 group">
                 <Mail className="h-5 w-5 text-primary/60 shrink-0 group-hover:text-primary transition-colors" />
-                <a href="mailto:contact@amonarq.com" className="text-muted-foreground hover:text-primary transition-colors text-sm">
-                  contact@amonarq.com
+                <a href={`mailto:${settings?.contactInfo.email}`} className="text-muted-foreground hover:text-primary transition-colors text-sm">
+                  {settings?.contactInfo.email}
                 </a>
               </li>
               <li className="flex items-center gap-3 group">
@@ -119,8 +139,6 @@ export function Footer() {
             <p className="text-muted-foreground/60 text-xs">
               © {currentYear} Amonarq Systems. All rights reserved.
             </p>
-
-
           </div>
         </div>
       </div>

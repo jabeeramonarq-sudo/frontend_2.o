@@ -17,6 +17,14 @@ import ProductPage from "@/pages/ProductPage";
 import NotFound from "./pages/NotFound";
 import { ScrollToTop } from "./components/shared/ScrollToTop";
 import { ScrollToTopOnNavigation } from "./components/shared/ScrollToTopOnNavigation";
+import LoginPage from "./pages/admin/LoginPage";
+import AdminDashboard from "./pages/admin/Dashboard";
+import InboxPage from "./pages/admin/InboxPage";
+import ContentPage from "./pages/admin/ContentPage";
+import SettingsPage from "./pages/admin/SettingsPage";
+import UsersPage from "./pages/admin/UsersPage";
+import CompleteInvitationPage from "./pages/CompleteInvitationPage";
+import SetupPage from "./pages/admin/SetupPage";
 
 const queryClient = new QueryClient();
 
@@ -40,6 +48,19 @@ const App = () => (
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/privacy" element={<PrivacyPolicyPage />} />
           <Route path="/terms" element={<TermsOfServicePage />} />
+
+          {/* Invitation Route */}
+          <Route path="/invite/:token" element={<CompleteInvitationPage />} />
+
+          {/* Admin Routes */}
+          <Route path="/admin/login" element={<LoginPage />} />
+          <Route path="/admin" element={<AdminDashboard />} />
+          <Route path="/setup" element={<SetupPage />} />
+          <Route path="/admin/inbox" element={<InboxPage />} />
+          <Route path="/admin/content" element={<ContentPage />} />
+          <Route path="/admin/settings" element={<SettingsPage />} />
+          <Route path="/admin/users" element={<UsersPage />} />
+
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

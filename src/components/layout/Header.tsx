@@ -1,8 +1,7 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { AmonarqLogo } from "@/components/brand/AmonarqLogo";
+import { useSettings } from "@/hooks/useSettings";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -19,13 +18,16 @@ const navLinks = [
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
+  const { settings } = useSettings();
+
+  const logoUrl = "/logo.png";
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/50">
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between h-16 md:h-20">
           <Link to="/" className="flex items-center gap-2">
-            <AmonarqLogo className="h-8 md:h-10 w-auto" />
+            <img src={logoUrl} alt="MyNxt" className="h-8 md:h-10 w-auto" />
           </Link>
 
           {/* Desktop Navigation */}
