@@ -118,7 +118,7 @@ export default function AboutPage() {
                   <div className="h-12 w-12 rounded-xl bg-secondary/20 flex items-center justify-center text-secondary mb-2">
                     <Heart className="h-6 w-6" />
                   </div>
-                  <h3 className="text-2xl font-bold text-foreground">{philosophyHeading.title}</h3>
+                  <h3 className="text-2xl font-bold text-foreground">Our Philosophy</h3>
                   <ul className="space-y-3 text-muted-foreground leading-relaxed">
                     {philosophyItems.map((item) => (
                       <li key={item._id} className="flex items-center gap-2">
@@ -144,7 +144,7 @@ export default function AboutPage() {
             <address className="text-muted-foreground not-italic mb-8">
               4-578 & Row House, Prasanth Nagar,<br />
               Madanapalle, Andhra Pradesh<br />
-              PIN-517325, India
+              PIN-517325, India.
             </address>
             <Button variant="hero" size="lg" asChild>
               <Link to="/contact">
