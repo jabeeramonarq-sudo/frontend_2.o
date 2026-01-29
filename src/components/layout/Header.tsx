@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { useSettings } from "@/hooks/useSettings";
@@ -19,6 +19,20 @@ export function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
   const { settings } = useSettings();
+
+  // Prevent body scroll when mobile menu is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+
+    // Cleanup on unmount
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isOpen]);
 
   const logoUrl = "/logo.png";
 
@@ -59,7 +73,7 @@ export function Header() {
 
       {/* Mobile Navigation */}
       {isOpen && (
-        <div className="lg:hidden absolute top-16 left-0 right-0 bg-background border-b border-border">
+        <div className="lg:hidden fixed top-16 md:top-20 left-0 right-0 bg-background border-b border-border max-h-[calc(100vh-4rem)] md:max-h-[calc(100vh-5rem)] overflow-y-auto">
           <nav className="container mx-auto px-4 py-4 flex flex-col gap-2">
             {navLinks.map((link) => (
               <Link

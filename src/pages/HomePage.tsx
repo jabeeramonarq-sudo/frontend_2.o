@@ -197,16 +197,18 @@ export default function HomePage() {
             <p className="text-muted-foreground text-lg mb-8">
               {continuity.subtitle}
             </p>
-            <div className="flex flex-col md:flex-row items-center justify-center gap-4 text-sm text-muted-foreground/80">
-              <span className="flex items-center gap-2">
-                <Lock className="h-4 w-4" />
-                {continuity.body.split('.')[0]}.
-              </span>
+            <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-6 text-sm text-muted-foreground/80 px-4">
+              <div className="inline-flex items-center gap-2">
+                <Lock className="h-4 w-4 flex-shrink-0" />
+                <span>{continuity.body.split('.')[0]}.</span>
+              </div>
               <span className="hidden md:block">•</span>
-              <span className="flex items-center gap-2">
-                <FileCheck className="h-4 w-4" />
-                {continuity.body.split('.')[1]}.
-              </span>
+              <div className="inline-flex items-center gap-2">
+                <div style={{ paddingBottom: '10px', paddingLeft: '50px' }}>
+                  <FileCheck className="h-4 w-4 flex-shrink-0" />
+                </div>
+                <span>{continuity.body.split('.')[1]}.</span>
+              </div>
             </div>
           </AnimatedSection>
         </div>
