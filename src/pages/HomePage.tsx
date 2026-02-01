@@ -202,7 +202,6 @@ export default function HomePage() {
                 <Lock className="h-4 w-4 flex-shrink-0" />
                 <span>{continuity.body.split('.')[0]}.</span>
               </div>
-              <span className="hidden md:block">•</span>
               <div className="inline-flex items-center gap-2">
                 <div style={{ paddingBottom: '10px', paddingLeft: '50px' }}>
                   <FileCheck className="h-4 w-4 flex-shrink-0" />

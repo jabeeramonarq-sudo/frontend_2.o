@@ -5,7 +5,7 @@ import { AnimatedSection } from "@/components/shared/AnimatedSection";
 import { Button } from "@/components/ui/button";
 import { useContent } from "@/hooks/useContent";
 import { Skeleton } from "@/components/ui/skeleton";
-import { FileText, Users, Settings, Eye, Shield, Heart, ArrowRight } from "lucide-react";
+import { FileText, Users, Settings, Eye, Shield, Heart, ArrowRight, Lock } from "lucide-react";
 
 export default function LifeEventsPage() {
   const { getContent, isLoading, sections } = useContent();
@@ -21,7 +21,7 @@ export default function LifeEventsPage() {
     .filter(s => s.sectionId.startsWith('life-events-matter-'))
     .sort((a, b) => a.order - b.order);
 
-  const icons = [Eye, Shield, Heart];
+  const icons = [Eye, Shield, Heart, Lock];
 
   if (isLoading) {
     return (
@@ -104,7 +104,7 @@ export default function LifeEventsPage() {
             </h2>
           </AnimatedSection>
 
-          <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
             {matters.map((item, idx) => {
               const Icon = icons[idx % icons.length];
               return (
