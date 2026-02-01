@@ -14,10 +14,18 @@ import { toast } from "sonner";
 import { z } from "zod";
 
 const contactSchema = z.object({
-  name: z.string().trim().min(1, "Name is required").max(100, "Name must be less than 100 characters"),
-  email: z.string().trim().email("Invalid email address").max(255, "Email must be less than 255 characters"),
-  subject: z.string().trim().min(1, "Subject is required").max(200, "Subject must be less than 200 characters"),
-  message: z.string().trim().min(1, "Message is required").max(2000, "Message must be less than 2000 characters"),
+  name: z.string().trim()
+    .min(2, "Name must be at least 2 characters")
+    .max(100, "Name must be less than 100 characters"),
+  email: z.string().trim()
+    .email("Invalid email address")
+    .max(255, "Email must be less than 255 characters"),
+  subject: z.string().trim()
+    .min(2, "Subject must be at least 2 characters")
+    .max(200, "Subject must be less than 200 characters"),
+  message: z.string().trim()
+    .min(2, "Message must be at least 2 characters")
+    .max(2000, "Message must be less than 2000 characters"),
 });
 
 export default function ContactPage() {
@@ -73,16 +81,18 @@ export default function ContactPage() {
         body: JSON.stringify(formData),
       });
 
+      const data = await response.json();
+
       if (!response.ok) {
-        throw new Error('Failed to send message');
+        throw new Error(data.error || 'Failed to send message');
       }
 
       setIsSubmitted(true);
       setFormData({ name: "", email: "", subject: "", message: "" });
       toast.success("Thank you for your message. We'll get back to you soon!");
-    } catch (error) {
+    } catch (error: any) {
       console.error('Error submitting form:', error);
-      toast.error("Failed to send message. Please try again.");
+      toast.error(error.message || "Failed to send message. Please try again.");
     } finally {
       setIsSubmitting(false);
     }
