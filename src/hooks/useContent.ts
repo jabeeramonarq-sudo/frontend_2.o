@@ -1,5 +1,5 @@
-import { useState, useEffect, useCallback } from "react";
-import api from "@/lib/api";
+import { useState, useCallback } from "react";
+import { staticContent } from "@/data/staticContent";
 
 export interface ContentSection {
     _id: string;
@@ -13,27 +13,16 @@ export interface ContentSection {
 }
 
 export const useContent = () => {
-    const [sections, setSections] = useState<ContentSection[]>([]);
-    const [isLoading, setIsLoading] = useState(true);
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    const [sections, setSections] = useState<ContentSection[]>(staticContent);
+    const [isLoading, setIsLoading] = useState(false);
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const [error, setError] = useState<string | null>(null);
 
     const fetchContent = useCallback(async () => {
-        try {
-            setIsLoading(true);
-            const response = await api.get("/content");
-            setSections(response.data);
-            setError(null);
-        } catch (err) {
-            console.error("Failed to fetch content:", err);
-            setError("Failed to load site content");
-        } finally {
-            setIsLoading(false);
-        }
+        // No-op for static content, but kept for compatibility
+        setIsLoading(false);
     }, []);
-
-    useEffect(() => {
-        fetchContent();
-    }, [fetchContent]);
 
     const getContent = (sectionId: string) => {
         const section = sections.find(s => s.sectionId === sectionId);

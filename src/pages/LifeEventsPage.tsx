@@ -69,7 +69,7 @@ export default function LifeEventsPage() {
 
             <div className="bg-card border border-border/50 rounded-2xl p-8 md:p-12 max-w-3xl mx-auto shadow-sm">
               <p className="text-foreground text-center text-lg mb-10 font-medium">
-                It brings together:
+                It brings together
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
                 <div className="text-center group">
