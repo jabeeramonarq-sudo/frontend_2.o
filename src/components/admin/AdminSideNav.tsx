@@ -16,7 +16,6 @@ import { Button } from "@/components/ui/button";
 const navItems = [
     { icon: LayoutDashboard, label: "Dashboard", path: "/admin" },
     { icon: Inbox, label: "Inbox", path: "/admin/inbox" },
-    { icon: FileText, label: "Content", path: "/admin/content" },
     { icon: Settings, label: "Settings", path: "/admin/settings" },
     { icon: Users, label: "Users", path: "/admin/users" },
 ];

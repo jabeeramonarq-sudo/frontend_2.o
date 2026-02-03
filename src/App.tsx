@@ -20,7 +20,6 @@ import { ScrollToTopOnNavigation } from "./components/shared/ScrollToTopOnNaviga
 import LoginPage from "./pages/admin/LoginPage";
 import AdminDashboard from "./pages/admin/Dashboard";
 import InboxPage from "./pages/admin/InboxPage";
-import ContentPage from "./pages/admin/ContentPage";
 import SettingsPage from "./pages/admin/SettingsPage";
 import UsersPage from "./pages/admin/UsersPage";
 import CompleteInvitationPage from "./pages/CompleteInvitationPage";
@@ -57,7 +56,6 @@ const App = () => (
           <Route path="/admin" element={<AdminDashboard />} />
           <Route path="/setup" element={<SetupPage />} />
           <Route path="/admin/inbox" element={<InboxPage />} />
-          <Route path="/admin/content" element={<ContentPage />} />
           <Route path="/admin/settings" element={<SettingsPage />} />
           <Route path="/admin/users" element={<UsersPage />} />
 
