@@ -1,7 +1,11 @@
 import axios from "axios";
 
+const defaultApiBase = import.meta.env.DEV
+    ? "http://localhost:5000/api"
+    : "https://api.amonarq.com/api";
+
 const api = axios.create({
-    baseURL: import.meta.env.VITE_API_URL || "https://api.amonarq.com/api",
+    baseURL: import.meta.env.VITE_API_URL || defaultApiBase,
     headers: {
         "Content-Type": "application/json",
     },

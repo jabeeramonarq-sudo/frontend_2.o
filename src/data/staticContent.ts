@@ -725,8 +725,8 @@ export const staticSettings = {
         favicon: '/favicon.ico'
     },
     contactInfo: {
-        address: '4-578 & Row House, Prasanth Nagar, Madanapalle, Andhra Pradesh PIN-517325, India.',
-        email: 'contact@amonarq.com',
+        address: '4-578, Row House, Prasanth Nagar, Madanapalle, Andhra Pradesh 517325, India.',
+        email: 'Info@amonarq.com',
         phone: '+91 00000 00000',
         mapsUrl: ''
     },

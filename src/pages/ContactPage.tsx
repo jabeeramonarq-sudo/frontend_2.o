@@ -8,10 +8,12 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { useContent } from "@/hooks/useContent";
 import { useSettings } from "@/hooks/useSettings";
+import api from "@/lib/api";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Mail, MapPin, Send, CheckCircle } from "lucide-react";
 import { toast } from "sonner";
 import { z } from "zod";
+import axios from "axios";
 
 const contactSchema = z.object({
   name: z.string().trim()
@@ -31,6 +33,13 @@ const contactSchema = z.object({
 export default function ContactPage() {
   const { getContent, isLoading: contentLoading } = useContent();
   const { settings, isLoading: settingsLoading } = useSettings();
+  const fallbackAddress = "4-578, Row House, Prasanth Nagar, Madanapalle, Andhra Pradesh 517325, India.";
+  const fallbackEmail = "Info@amonarq.com";
+  const contactAddress = settings?.contactInfo?.address?.trim() || fallbackAddress;
+  const contactEmail = settings?.contactInfo?.email?.trim() || fallbackEmail;
+  const mapsUrl =
+    settings?.contactInfo?.mapsUrl?.trim() ||
+    `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(contactAddress)}`;
 
   const hero = getContent('contact-hero');
   const info = getContent('contact-info-heading');
@@ -73,26 +82,18 @@ export default function ContactPage() {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch('http://localhost:5000/api/inbox/submit', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
-
-      const data = await response.json();
-
-      if (!response.ok) {
-        throw new Error(data.error || 'Failed to send message');
-      }
+      await api.post('/inbox/submit', formData);
 
       setIsSubmitted(true);
       setFormData({ name: "", email: "", subject: "", message: "" });
       toast.success("Thank you for your message. We'll get back to you soon!");
     } catch (error: any) {
       console.error('Error submitting form:', error);
-      toast.error(error.message || "Failed to send message. Please try again.");
+      if (axios.isAxiosError(error) && !error.response) {
+        toast.error("Cannot reach backend server. Please ensure API is running on port 5000.");
+      } else {
+        toast.error(error.response?.data?.error || error.message || "Failed to send message. Please try again.");
+      }
     } finally {
       setIsSubmitting(false);
     }
@@ -153,8 +154,8 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-foreground mb-1">Email</h3>
-                    <a href={`mailto:${settings?.contactInfo.email}`} className="text-muted-foreground hover:text-primary transition-colors">
-                      {settings?.contactInfo.email}
+                    <a href={`mailto:${contactEmail}`} className="text-muted-foreground hover:text-primary transition-colors">
+                      {contactEmail}
                     </a>
                   </div>
                 </div>
@@ -165,10 +166,17 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-foreground mb-1">Registered Office</h3>
-                    <address className="text-muted-foreground not-italic text-sm leading-relaxed whitespace-pre-line">
-                      Amonarq Systems Private Limited<br />
-                      {settings?.contactInfo.address}
-                    </address>
+                    <a
+                      href={mapsUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-muted-foreground hover:text-primary transition-colors"
+                    >
+                      <address className="not-italic text-sm leading-relaxed whitespace-pre-line">
+                        Amonarq Systems Private Limited<br />
+                        {contactAddress}
+                      </address>
+                    </a>
                   </div>
                 </div>
               </div>

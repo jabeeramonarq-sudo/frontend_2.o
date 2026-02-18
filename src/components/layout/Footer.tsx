@@ -17,6 +17,13 @@ const XIcon = ({ className }: { className?: string }) => (
 export function Footer() {
   const currentYear = new Date().getFullYear();
   const { settings, isLoading } = useSettings();
+  const fallbackAddress = "4-578, Row House, Prasanth Nagar, Madanapalle, Andhra Pradesh 517325, India.";
+  const fallbackEmail = "Info@amonarq.com";
+  const contactAddress = settings?.contactInfo?.address?.trim() || fallbackAddress;
+  const contactEmail = settings?.contactInfo?.email?.trim() || fallbackEmail;
+  const mapsUrl =
+    settings?.contactInfo?.mapsUrl?.trim() ||
+    `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(contactAddress)}`;
 
   if (isLoading) {
     return (
@@ -107,21 +114,31 @@ export function Footer() {
             <ul className="space-y-4">
               <li className="flex items-start gap-3 group">
                 <MapPin className="h-5 w-5 text-primary/60 shrink-0 mt-0.5 group-hover:text-primary transition-colors" />
-                <span className="text-muted-foreground text-sm leading-relaxed whitespace-pre-line">
-                  {settings?.contactInfo.address}
-                </span>
+                <a
+                  href={mapsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-muted-foreground hover:text-primary transition-colors text-sm leading-relaxed whitespace-pre-line"
+                >
+                  {contactAddress}
+                </a>
               </li>
               <li className="flex items-center gap-3 group">
                 <Mail className="h-5 w-5 text-primary/60 shrink-0 group-hover:text-primary transition-colors" />
-                <a href={`mailto:${settings?.contactInfo.email}`} className="text-muted-foreground hover:text-primary transition-colors text-sm">
-                  {settings?.contactInfo.email}
+                <a href={`mailto:${contactEmail}`} className="text-muted-foreground hover:text-primary transition-colors text-sm">
+                  {contactEmail}
                 </a>
               </li>
               <li className="flex items-center gap-3 group">
                 <Globe className="h-5 w-5 text-primary/60 shrink-0 group-hover:text-primary transition-colors" />
-                <span className="text-muted-foreground text-sm italic">
+                <a
+                  href="https://www.amonarq.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-muted-foreground hover:text-primary transition-colors text-sm italic"
+                >
                   www.amonarq.com
-                </span>
+                </a>
               </li>
             </ul>
           </div>
