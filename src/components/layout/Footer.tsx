@@ -18,7 +18,7 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
   const { settings, isLoading } = useSettings();
   const fallbackAddress = "4-578, Row House, Prasanth Nagar, Madanapalle, Andhra Pradesh 517325, India.";
-  const fallbackEmail = "Business@amonarq.com";
+  const fallbackEmail = "business@amonarq.com";
   const contactAddress = settings?.contactInfo?.address?.trim() || fallbackAddress;
   const contactEmail = settings?.contactInfo?.email?.trim() || fallbackEmail;
   const mapsUrl =
