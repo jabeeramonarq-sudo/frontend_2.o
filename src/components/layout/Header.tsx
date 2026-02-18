@@ -45,9 +45,9 @@ export function Header() {
               <Link
                 key={link.href}
                 to={link.href}
-                className={`px-3 py-1.5 text-sm font-medium tracking-wide rounded-full transition-all duration-200 ${location.pathname === link.href
+                className={`px-3 py-1.5 text-sm font-medium tracking-wide rounded-full transition-[color,background-color,transform,box-shadow] duration-200 ${location.pathname === link.href
                   ? "text-primary bg-primary/12 border border-primary/30 shadow-sm"
-                  : "text-muted-foreground hover:text-foreground hover:bg-muted/60 border border-transparent"
+                  : "text-muted-foreground hover:text-foreground hover:bg-muted/60 hover:-translate-y-0.5 hover:shadow-md border border-transparent"
                   }`}
               >
                 {link.label}
