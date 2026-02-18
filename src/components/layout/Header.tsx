@@ -40,14 +40,14 @@ export function Header() {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-2 ml-auto rounded-full border border-border/60 bg-card/40 px-2 py-1 shadow-sm">
+          <nav className="hidden lg:flex items-center gap-6 ml-auto">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 to={link.href}
-                className={`px-3 py-1.5 text-sm font-medium tracking-wide rounded-full transition-[color,background-color,border-color,box-shadow] duration-200 ${location.pathname === link.href
-                  ? "text-primary bg-primary/12 border border-primary/30 shadow-sm"
-                  : "text-muted-foreground hover:text-foreground hover:bg-primary/8 hover:border-primary/20 hover:shadow-[0_0_0_1px_rgba(59,130,246,0.12)] border border-transparent"
+                className={`px-0 py-2 text-[0.92rem] font-medium tracking-[0.01em] border-b-2 transition-[color,border-color] duration-200 ${location.pathname === link.href
+                  ? "text-foreground border-b-primary"
+                  : "text-muted-foreground border-b-transparent hover:text-foreground hover:border-b-primary/40"
                   }`}
               >
                 {link.label}

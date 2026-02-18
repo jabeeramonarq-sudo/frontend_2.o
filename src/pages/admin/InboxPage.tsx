@@ -19,6 +19,11 @@ interface Message {
     createdAt: string;
 }
 
+const withEllipsis = (value: string, maxChars: number) => {
+    if (!value) return "";
+    return value.length > maxChars ? `${value.slice(0, maxChars).trimEnd()}...` : value;
+};
+
 export default function InboxPage() {
     const [searchTerm, setSearchTerm] = useState("");
     const [messages, setMessages] = useState<Message[]>([]);
@@ -98,8 +103,8 @@ export default function InboxPage() {
                                         <h3 className="font-semibold text-white leading-none">{msg.name}</h3>
                                         <span className="text-xs text-slate-500 font-mono">{msg.email}</span>
                                     </div>
-                                    <p className="text-slate-300 font-medium mb-1">{msg.subject}</p>
-                                    <p className="text-slate-500 text-sm mb-2">{msg.message}</p>
+                                    <p className="text-slate-300 font-medium mb-1">{withEllipsis(msg.subject, 80)}</p>
+                                    <p className="text-slate-500 text-sm mb-2">{withEllipsis(msg.message, 160)}</p>
                                     <p className="text-xs text-slate-600">
                                         {formatDistanceToNow(new Date(msg.createdAt), { addSuffix: true })}
                                     </p>
