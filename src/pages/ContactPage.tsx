@@ -34,7 +34,7 @@ export default function ContactPage() {
   const { getContent, isLoading: contentLoading } = useContent();
   const { settings, isLoading: settingsLoading } = useSettings();
   const fallbackAddress = "4-578, Row House, Prasanth Nagar, Madanapalle, Andhra Pradesh 517325, India.";
-  const fallbackEmail = "Info@amonarq.com";
+  const fallbackEmail = "Business@amonarq.com";
   const contactAddress = settings?.contactInfo?.address?.trim() || fallbackAddress;
   const contactEmail = settings?.contactInfo?.email?.trim() || fallbackEmail;
   const mapsUrl =
