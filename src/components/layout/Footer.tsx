@@ -154,7 +154,7 @@ export function Footer() {
             </p>
           </div>
 
-          <p className="text-center text-muted-foreground/70 text-xs tracking-wide">
+          <p className="text-center text-muted-foreground/60 text-xs">
             DPIIT Recognised Startup
           </p>
 
