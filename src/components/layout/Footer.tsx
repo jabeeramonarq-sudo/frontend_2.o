@@ -146,10 +146,6 @@ export function Footer() {
 
         {/* Bottom Section */}
         <div className="pt-8 border-t border-border/20 space-y-8">
-          <p className="text-center text-muted-foreground/70 text-xs tracking-wide">
-            DPIIT recognised Startup
-          </p>
-
           {/* Transparency Statement */}
           <div className="max-w-4xl mx-auto px-6 py-4 bg-primary/5 border border-primary/10 rounded-xl">
             <p className="text-muted-foreground/70 text-[11px] md:text-[12px] text-center leading-relaxed">
@@ -157,6 +153,10 @@ export function Footer() {
               MyNxt is a consent-based digital continuity execution platform, focused on structured access and predefined instructions and MyNxt does not store or claim ownership over user assets.
             </p>
           </div>
+
+          <p className="text-center text-muted-foreground/70 text-xs tracking-wide">
+            DPIIT Recognised Startup
+          </p>
 
           {/* Copyright & Legal */}
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
