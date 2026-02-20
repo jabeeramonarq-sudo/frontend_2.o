@@ -146,6 +146,10 @@ export function Footer() {
 
         {/* Bottom Section */}
         <div className="pt-8 border-t border-border/20 space-y-8">
+          <p className="text-center text-muted-foreground/70 text-xs tracking-wide">
+            DPIIT recognised Startup
+          </p>
+
           {/* Transparency Statement */}
           <div className="max-w-4xl mx-auto px-6 py-4 bg-primary/5 border border-primary/10 rounded-xl">
             <p className="text-muted-foreground/70 text-[11px] md:text-[12px] text-center leading-relaxed">
