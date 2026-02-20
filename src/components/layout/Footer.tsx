@@ -154,10 +154,6 @@ export function Footer() {
             </p>
           </div>
 
-          <p className="text-center text-muted-foreground/60 text-xs">
-            DPIIT Recognised Startup
-          </p>
-
           {/* Copyright & Legal */}
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
             <div className="flex items-center gap-6">
@@ -170,6 +166,9 @@ export function Footer() {
             </div>
 
             <p className="text-muted-foreground/60 text-xs">
+              DPIIT Recognised Startup
+            </p>
+            <p className="text-muted-foreground/60 text-xs">
               © {currentYear} Amonarq Systems. All rights reserved.
             </p>
           </div>
@@ -178,3 +177,4 @@ export function Footer() {
     </footer>
   );
 }
+
