@@ -280,7 +280,8 @@ export const staticContent = [
     },
     { _id: 'static-56', sectionId: 'life-event-part-1', title: 'Relevant Information', body: 'Documents, details, and context', order: 62, isActive: true },
     { _id: 'static-57', sectionId: 'life-event-part-2', title: 'Clear Rules', body: 'Access and sharing conditions', order: 63, isActive: true },
-    
+    { _id: 'static-58', sectionId: 'life-events-matter-heading', title: 'Why Life Events Matter', order: 64, isActive: true },
+
     { _id: 'static-59', sectionId: 'life-events-matter-1', title: 'Clarity for everyone', body: 'Everyone involved knows what\'s expected and where to find information.', order: 65, isActive: true },
     { _id: 'static-60', sectionId: 'life-events-matter-2', title: 'Less confusion', body: 'Reduces chaos and misunderstandings during critical moments.', order: 66, isActive: true },
     { _id: 'static-61', sectionId: 'life-events-matter-3', title: 'Clear intent', body: 'Your wishes and responsibilities are documented and respected.', order: 67, isActive: true },

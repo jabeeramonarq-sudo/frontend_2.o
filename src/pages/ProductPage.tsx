@@ -23,6 +23,12 @@ export default function ProductPage() {
     const notVault = getContent('product-not-vault');
     const realWorldHeading = getContent('product-real-world-heading');
     const cta = getContent('product-cta');
+    const notVaultSection = sections.find((s) => s.sectionId === "product-not-vault");
+    const conceptImage =
+        (notVaultSection as any)?.images?.[0] ||
+        (notVaultSection as any)?.image ||
+        (notVault as any).image ||
+        "";
 
     const miniFeatures = sections
         .filter(s => s.sectionId.startsWith('product-mini-'))
@@ -134,25 +140,33 @@ export default function ProductPage() {
                         </AnimatedSection>
 
                         <AnimatedSection delay={200} className="relative">
-                            <div className="aspect-square relative rounded-3xl overflow-hidden border border-border/50 bg-gradient-to-br from-primary/5 to-secondary/5 p-8 flex items-center justify-center">
-                                <div className="w-full max-w-[280px] aspect-[9/19] bg-background rounded-[40px] border-[8px] border-border shadow-2xl relative overflow-hidden">
-                                    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/3 h-6 bg-border rounded-b-2xl" />
-                                    <div className="p-6 pt-10">
-                                        <div className="w-12 h-12 rounded-xl bg-primary/20 mb-6" />
-                                        <div className="space-y-4">
-                                            <div className="h-4 w-3/4 bg-muted rounded" />
-                                            <div className="h-4 w-full bg-muted rounded" />
-                                            <div className="h-20 w-full bg-primary/5 border border-primary/20 rounded-xl p-3 flex flex-col justify-end">
-                                                <div className="h-2 w-1/2 bg-primary/40 rounded" />
-                                            </div>
-                                            <div className="grid grid-cols-2 gap-3">
-                                                <div className="h-16 bg-muted/50 rounded-xl" />
-                                                <div className="h-16 bg-muted/50 rounded-xl" />
+                            <div className="aspect-square relative rounded-3xl overflow-hidden border border-border/50 bg-gradient-to-br from-primary/5 to-secondary/5 p-4 md:p-8 flex items-center justify-center">
+                                {conceptImage ? (
+                                    <img
+                                        src={conceptImage}
+                                        alt="MyNxt visual"
+                                        className="w-full h-full object-cover rounded-2xl"
+                                    />
+                                ) : (
+                                    <div className="w-full max-w-[280px] aspect-[9/19] bg-background rounded-[40px] border-[8px] border-border shadow-2xl relative overflow-hidden">
+                                        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/3 h-6 bg-border rounded-b-2xl" />
+                                        <div className="p-6 pt-10">
+                                            <div className="w-12 h-12 rounded-xl bg-primary/20 mb-6" />
+                                            <div className="space-y-4">
+                                                <div className="h-4 w-3/4 bg-muted rounded" />
+                                                <div className="h-4 w-full bg-muted rounded" />
+                                                <div className="h-20 w-full bg-primary/5 border border-primary/20 rounded-xl p-3 flex flex-col justify-end">
+                                                    <div className="h-2 w-1/2 bg-primary/40 rounded" />
+                                                </div>
+                                                <div className="grid grid-cols-2 gap-3">
+                                                    <div className="h-16 bg-muted/50 rounded-xl" />
+                                                    <div className="h-16 bg-muted/50 rounded-xl" />
+                                                </div>
                                             </div>
                                         </div>
+                                        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 w-1/2 h-8 bg-primary rounded-full" />
                                     </div>
-                                    <div className="absolute bottom-6 left-1/2 -translate-x-1/2 w-1/2 h-8 bg-primary rounded-full" />
-                                </div>
+                                )}
                             </div>
                         </AnimatedSection>
                     </div>

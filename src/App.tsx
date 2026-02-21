@@ -7,6 +7,7 @@ import HomePage from "./pages/HomePage";
 import HowItWorksPage from "./pages/HowItWorksPage";
 import LifeEventsPage from "./pages/LifeEventsPage";
 import ContinuityPage from "./pages/ContinuityPage";
+import ConsentPage from "./pages/ConsentPage";
 import ConsentApprovalPage from "./pages/ConsentApprovalPage";
 import SecurityPage from "./pages/SecurityPage";
 import AboutPage from "./pages/AboutPage";
@@ -41,6 +42,7 @@ const App = () => (
           <Route path="/how-it-works" element={<HowItWorksPage />} />
           <Route path="/life-events" element={<LifeEventsPage />} />
           <Route path="/continuity" element={<ContinuityPage />} />
+          <Route path="/consent-overview" element={<ConsentPage />} />
           <Route path="/consent" element={<ConsentApprovalPage />} />
           <Route path="/security" element={<SecurityPage />} />
           <Route path="/about" element={<AboutPage />} />

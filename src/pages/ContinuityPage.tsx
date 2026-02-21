@@ -15,6 +15,10 @@ export default function ContinuityPage() {
   const note = getContent('continuity-note');
   const howHeading = getContent('continuity-how-heading');
   const cta = getContent('continuity-cta');
+  const explainedBadges = (explained.subtitle || "Cautious, Rule-based, Consent-driven")
+    .split(",")
+    .map((v) => v.trim())
+    .filter(Boolean);
 
   const steps = sections
     .filter(s => s.sectionId.startsWith('continuity-step-'))
@@ -72,18 +76,15 @@ export default function ContinuityPage() {
                 {explained.body}
               </p>
               <div className="flex flex-wrap items-center justify-center gap-4 text-sm">
-                <span className="flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full">
-                  <Shield className="h-4 w-4" />
-                  Cautious
-                </span>
-                <span className="flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full">
-                  <CheckCircle className="h-4 w-4" />
-                  Rule-based
-                </span>
-                <span className="flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full">
-                  <Lock className="h-4 w-4" />
-                  Consent-driven
-                </span>
+                {explainedBadges.map((badge, idx) => {
+                  const Icon = [Shield, CheckCircle, Lock][idx % 3];
+                  return (
+                    <span key={`${badge}-${idx}`} className="flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full">
+                      <Icon className="h-4 w-4" />
+                      {badge}
+                    </span>
+                  );
+                })}
               </div>
             </div>
           </AnimatedSection>
