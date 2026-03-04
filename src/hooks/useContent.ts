@@ -1,4 +1,4 @@
-import { useState, useCallback, useEffect } from "react";
+import { useState, useCallback, useEffect, useRef } from "react";
 import { staticContent } from "@/data/staticContent";
 import api from "@/lib/api";
 
@@ -18,6 +18,7 @@ export const useContent = () => {
     const [sections, setSections] = useState<ContentSection[]>(staticContent);
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState<string | null>(null);
+    const sectionsRef = useRef<ContentSection[]>(staticContent);
 
     const normalizeSection = (section: any): ContentSection => ({
         ...section,
@@ -45,8 +46,14 @@ export const useContent = () => {
         return Array.from(merged.values()).sort((a, b) => a.order - b.order);
     };
 
+    useEffect(() => {
+        sectionsRef.current = sections;
+    }, [sections]);
+
     const fetchContent = useCallback(async () => {
-        setIsLoading(true);
+        if (sectionsRef.current.length === 0) {
+            setIsLoading(true);
+        }
         setError(null);
         try {
             const response = await api.get("/content");
@@ -61,7 +68,13 @@ export const useContent = () => {
     }, []);
 
     useEffect(() => {
-        fetchContent();
+        if (typeof window === "undefined") return;
+        if ("requestIdleCallback" in window) {
+            const idleId = (window as any).requestIdleCallback(() => fetchContent(), { timeout: 2000 });
+            return () => (window as any).cancelIdleCallback?.(idleId);
+        }
+        const timeoutId = window.setTimeout(fetchContent, 0);
+        return () => window.clearTimeout(timeoutId);
     }, [fetchContent]);
 
     const getContent = (sectionId: string) => {
