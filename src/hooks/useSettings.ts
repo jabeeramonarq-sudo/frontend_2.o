@@ -13,6 +13,9 @@ export interface Settings {
         phone: string;
         mapsUrl: string;
     };
+    featureFlags: {
+        emailCaptureEnabled: boolean;
+    };
     footer: {
         badgeText: string;
         copyrightText: string;
@@ -23,6 +26,9 @@ export interface Settings {
         icon: string;
     }>;
 }
+
+let cachedSettings: Settings | null = null;
+let inFlight: Promise<Settings | null> | null = null;
 
 const defaultSettings: Settings = {
     logos: {
@@ -36,6 +42,9 @@ const defaultSettings: Settings = {
         phone: "",
         mapsUrl: ""
     },
+    featureFlags: {
+        emailCaptureEnabled: true
+    },
     footer: {
         badgeText: "DPIIT Recognised Startup",
         copyrightText: "Â© {year} Amonarq Systems. All rights reserved."
@@ -44,15 +53,43 @@ const defaultSettings: Settings = {
 };
 
 export const useSettings = () => {
-    const [settings, setSettings] = useState<Settings>(defaultSettings);
+    const [settings, setSettings] = useState<Settings>(cachedSettings || defaultSettings);
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState<string | null>(null);
 
     const fetchSettings = useCallback(async () => {
         try {
+            if (cachedSettings) {
+                setSettings(cachedSettings);
+                return;
+            }
+            if (inFlight) {
+                const cached = await inFlight;
+                if (cached) setSettings(cached);
+                return;
+            }
             setIsLoading(true);
-            const response = await api.get("/settings");
-            setSettings(response.data || defaultSettings);
+            inFlight = api
+                .get("/settings")
+                .then((response) => {
+                    const next: Settings = {
+                        ...defaultSettings,
+                        ...response.data,
+                        featureFlags: {
+                            emailCaptureEnabled: response.data?.featureFlags?.emailCaptureEnabled ?? true
+                        }
+                    };
+                    cachedSettings = next;
+                    return next;
+                })
+                .catch(() => null)
+                .finally(() => {
+                    inFlight = null;
+                });
+            const resolved = await inFlight;
+            if (resolved) {
+                setSettings(resolved);
+            }
             setError(null);
         } catch (err) {
             console.error("Failed to fetch settings:", err);

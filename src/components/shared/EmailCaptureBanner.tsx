@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import { X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { useSettings } from "@/hooks/useSettings";
 
 const getApiBase = () => {
   const envBase = import.meta.env.VITE_API_URL;
@@ -16,6 +17,8 @@ export function EmailCaptureBanner() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState("");
 
+  const { settings } = useSettings();
+  const isEnabled = settings?.featureFlags?.emailCaptureEnabled !== false;
   const apiBase = useMemo(() => getApiBase(), []);
 
   useEffect(() => {
@@ -63,7 +66,7 @@ export function EmailCaptureBanner() {
     }
   };
 
-  if (!isVisible) return null;
+  if (!isEnabled || !isVisible) return null;
 
   return (
     <div className="fixed bottom-4 left-0 right-0 z-50 px-4 md:px-8">
