@@ -23,6 +23,9 @@ export const SEO = ({
     const { settings } = useSettings();
 
     useEffect(() => {
+        if (settings?.featureFlags?.seoEnabled === false) {
+            return;
+        }
         const siteName = "Amonarq";
         const baseTitle = settings?.seo?.siteTitle?.trim() || "Amonarq - Designing Systems for Continuity";
         const fullTitle = title ? `${title} | ${siteName}` : baseTitle;

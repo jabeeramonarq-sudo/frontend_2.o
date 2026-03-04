@@ -16,6 +16,7 @@ export interface Settings {
     featureFlags: {
         emailCaptureEnabled: boolean;
         showPhoneNumber: boolean;
+        seoEnabled: boolean;
     };
     footer: {
         badgeText: string;
@@ -52,7 +53,8 @@ const defaultSettings: Settings = {
     },
     featureFlags: {
         emailCaptureEnabled: true,
-        showPhoneNumber: false
+        showPhoneNumber: false,
+        seoEnabled: true
     },
     footer: {
         badgeText: "DPIIT Recognised Startup",
@@ -92,7 +94,8 @@ export const useSettings = () => {
                         ...response.data,
                         featureFlags: {
                             emailCaptureEnabled: response.data?.featureFlags?.emailCaptureEnabled ?? true,
-                            showPhoneNumber: response.data?.featureFlags?.showPhoneNumber ?? false
+                            showPhoneNumber: response.data?.featureFlags?.showPhoneNumber ?? false,
+                            seoEnabled: response.data?.featureFlags?.seoEnabled ?? true
                         },
                         seo: {
                             siteTitle: response.data?.seo?.siteTitle || defaultSettings.seo?.siteTitle,
