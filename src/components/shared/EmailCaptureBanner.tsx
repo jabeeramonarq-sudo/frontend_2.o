@@ -69,8 +69,8 @@ export function EmailCaptureBanner() {
     <div className="fixed bottom-4 left-0 right-0 z-50 px-4 md:px-8">
       <div className="mx-auto flex w-full max-w-4xl flex-col gap-3 rounded-2xl border border-border/60 bg-slate-950/95 p-4 shadow-2xl backdrop-blur sm:flex-row sm:items-center sm:justify-between">
         <div className="flex-1">
-          <h3 className="text-sm font-semibold text-white">Stay in the loop</h3>
-          <p className="text-xs text-slate-400">Share your name and email for updates. You can close this anytime.</p>
+          <h3 className="text-sm font-semibold text-white">Stay informed</h3>
+          <p className="text-xs text-slate-400">Share your name and email for product updates. You can close this anytime.</p>
         </div>
         <div className="flex flex-1 flex-col gap-2 sm:flex-row sm:items-center">
           <Input
