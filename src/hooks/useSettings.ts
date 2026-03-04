@@ -29,7 +29,9 @@ export interface Settings {
 }
 
 let cachedSettings: Settings | null = null;
+let cachedAt = 0;
 let inFlight: Promise<Settings | null> | null = null;
+const CACHE_TTL_MS = 60_000;
 
 const defaultSettings: Settings = {
     logos: {
@@ -61,7 +63,8 @@ export const useSettings = () => {
 
     const fetchSettings = useCallback(async () => {
         try {
-            if (cachedSettings) {
+            const now = Date.now();
+            if (cachedSettings && now - cachedAt < CACHE_TTL_MS) {
                 setSettings(cachedSettings);
                 return;
             }
@@ -83,6 +86,7 @@ export const useSettings = () => {
                         }
                     };
                     cachedSettings = next;
+                    cachedAt = Date.now();
                     return next;
                 })
                 .catch(() => null)
