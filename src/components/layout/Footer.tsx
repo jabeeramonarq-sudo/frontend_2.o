@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import { Mail, MapPin, Globe, Linkedin } from "lucide-react";
 import { useSettings } from "@/hooks/useSettings";
-import { Skeleton } from "@/components/ui/skeleton";
 
 const XIcon = ({ className }: { className?: string }) => (
   <svg
@@ -16,7 +15,7 @@ const XIcon = ({ className }: { className?: string }) => (
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
-  const { settings, isLoading } = useSettings();
+  const { settings } = useSettings();
   const fallbackAddress = "4-578, Row House, Prasanth Nagar, Madanapalle, Andhra Pradesh 517325, India.";
   const fallbackEmail = "business@amonarq.com";
   const contactAddress = settings?.contactInfo?.address?.trim() || fallbackAddress;
@@ -30,16 +29,6 @@ export function Footer() {
   const footerCopyright = footerCopyrightTemplate.includes("{year}")
     ? footerCopyrightTemplate.replaceAll("{year}", String(currentYear))
     : footerCopyrightTemplate;
-
-  if (isLoading) {
-    return (
-      <footer className="bg-surface-dark border-t border-border/50 py-8">
-        <div className="container mx-auto px-4 md:px-6">
-          <Skeleton className="h-40 w-full" />
-        </div>
-      </footer>
-    );
-  }
 
   return (
     <footer className="bg-surface-dark border-t border-border/50 pt-16 pb-8">
@@ -178,4 +167,3 @@ export function Footer() {
     </footer>
   );
 }
-

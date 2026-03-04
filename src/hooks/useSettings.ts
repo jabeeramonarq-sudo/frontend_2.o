@@ -24,16 +24,35 @@ export interface Settings {
     }>;
 }
 
+const defaultSettings: Settings = {
+    logos: {
+        main: "/logo.png",
+        footer: "/mynxt-logo.png",
+        favicon: "/favicon.ico"
+    },
+    contactInfo: {
+        address: "4-578, Row House, Prasanth Nagar, Madanapalle, Andhra Pradesh 517325, India.",
+        email: "business@amonarq.com",
+        phone: "",
+        mapsUrl: ""
+    },
+    footer: {
+        badgeText: "DPIIT Recognised Startup",
+        copyrightText: "Â© {year} Amonarq Systems. All rights reserved."
+    },
+    socialMedia: []
+};
+
 export const useSettings = () => {
-    const [settings, setSettings] = useState<Settings | null>(null);
-    const [isLoading, setIsLoading] = useState(true);
+    const [settings, setSettings] = useState<Settings>(defaultSettings);
+    const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState<string | null>(null);
 
     const fetchSettings = useCallback(async () => {
         try {
             setIsLoading(true);
             const response = await api.get("/settings");
-            setSettings(response.data);
+            setSettings(response.data || defaultSettings);
             setError(null);
         } catch (err) {
             console.error("Failed to fetch settings:", err);
