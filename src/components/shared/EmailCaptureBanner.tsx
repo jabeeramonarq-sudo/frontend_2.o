@@ -3,9 +3,6 @@ import { X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 
-const DISMISS_KEY = "lead_capture_dismissed";
-const CAPTURED_KEY = "lead_capture_submitted";
-
 const getApiBase = () => {
   const envBase = import.meta.env.VITE_API_URL;
   if (envBase) return envBase;
@@ -22,15 +19,10 @@ export function EmailCaptureBanner() {
   const apiBase = useMemo(() => getApiBase(), []);
 
   useEffect(() => {
-    const dismissed = localStorage.getItem(DISMISS_KEY);
-    const submitted = localStorage.getItem(CAPTURED_KEY);
-    if (!dismissed && !submitted) {
-      setIsVisible(true);
-    }
+    setIsVisible(true);
   }, []);
 
   const handleDismiss = () => {
-    localStorage.setItem(DISMISS_KEY, "true");
     setIsVisible(false);
   };
 
@@ -63,7 +55,6 @@ export function EmailCaptureBanner() {
         throw new Error(data.error || "Failed to submit");
       }
 
-      localStorage.setItem(CAPTURED_KEY, "true");
       setIsVisible(false);
     } catch (err: any) {
       setError(err?.message || "Failed to submit");
