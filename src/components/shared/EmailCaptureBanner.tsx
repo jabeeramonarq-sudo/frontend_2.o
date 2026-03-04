@@ -75,13 +75,27 @@ export function EmailCaptureBanner() {
   if (!isVisible) return null;
 
   return (
-    <div className="fixed bottom-4 left-0 right-0 z-50 px-4 md:px-8">
-      <div className="mx-auto flex w-full max-w-4xl flex-col gap-3 rounded-2xl border border-border/60 bg-slate-950/95 p-4 shadow-2xl backdrop-blur sm:flex-row sm:items-center sm:justify-between">
-        <div className="flex-1">
-          <h3 className="text-sm font-semibold text-white">Stay in the loop</h3>
-          <p className="text-xs text-slate-400">Share your name and email for updates. You can close this anytime.</p>
+    <div className="fixed inset-0 z-50 flex items-center justify-center px-4">
+      <div className="absolute inset-0 bg-black/60" onClick={handleDismiss} />
+      <div className="relative z-10 w-full max-w-2xl rounded-2xl border border-border/60 bg-slate-950/95 p-6 shadow-2xl backdrop-blur">
+        <div className="flex items-start justify-between gap-4">
+          <div>
+            <h3 className="text-lg font-semibold text-white">Stay in the loop</h3>
+            <p className="text-sm text-slate-400">
+              Share your name and email for updates. You can skip this anytime.
+            </p>
+          </div>
+          <Button
+            variant="ghost"
+            size="icon"
+            className="text-slate-400 hover:text-white"
+            onClick={handleDismiss}
+          >
+            <X size={18} />
+          </Button>
         </div>
-        <div className="flex flex-1 flex-col gap-2 sm:flex-row sm:items-center">
+
+        <div className="mt-5 grid gap-3 sm:grid-cols-2">
           <Input
             placeholder="Full name"
             className="bg-slate-900 border-slate-800 text-white"
@@ -95,6 +109,15 @@ export function EmailCaptureBanner() {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
+        </div>
+        <div className="mt-4 flex flex-col items-stretch gap-2 sm:flex-row sm:items-center sm:justify-end">
+          <Button
+            variant="outline"
+            className="border-slate-700 text-slate-200 hover:bg-slate-800"
+            onClick={handleDismiss}
+          >
+            Skip
+          </Button>
           <Button
             onClick={handleSubmit}
             disabled={isSubmitting}
@@ -103,18 +126,11 @@ export function EmailCaptureBanner() {
             {isSubmitting ? "Saving..." : "Submit"}
           </Button>
         </div>
-        <Button
-          variant="ghost"
-          size="icon"
-          className="text-slate-400 hover:text-white"
-          onClick={handleDismiss}
-        >
-          <X size={18} />
-        </Button>
+
+        {error && (
+          <p className="mt-3 text-xs text-red-400">{error}</p>
+        )}
       </div>
-      {error && (
-        <p className="mx-auto mt-2 max-w-4xl text-xs text-red-400">{error}</p>
-      )}
     </div>
   );
 }
