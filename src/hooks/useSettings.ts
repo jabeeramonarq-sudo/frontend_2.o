@@ -49,7 +49,7 @@ const defaultSettings: Settings = {
     },
     footer: {
         badgeText: "DPIIT Recognised Startup",
-        copyrightText: "Â© {year} Amonarq Systems. All rights reserved."
+        copyrightText: "© {year} Amonarq Systems. All rights reserved."
     },
     socialMedia: []
 };
