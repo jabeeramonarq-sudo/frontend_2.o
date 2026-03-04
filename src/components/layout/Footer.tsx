@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Mail, MapPin, Globe, Linkedin } from "lucide-react";
+import { Mail, MapPin, Globe, Linkedin, Phone } from "lucide-react";
 import { useSettings } from "@/hooks/useSettings";
 
 const XIcon = ({ className }: { className?: string }) => (
@@ -20,6 +20,8 @@ export function Footer() {
   const fallbackEmail = "business@amonarq.com";
   const contactAddress = settings?.contactInfo?.address?.trim() || fallbackAddress;
   const contactEmail = settings?.contactInfo?.email?.trim() || fallbackEmail;
+  const contactPhone = settings?.contactInfo?.phone?.trim() || "";
+  const showPhone = settings?.featureFlags?.showPhoneNumber && contactPhone;
   const mapsUrl =
     settings?.contactInfo?.mapsUrl?.trim() ||
     `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(contactAddress)}`;
@@ -122,6 +124,14 @@ export function Footer() {
                   {contactEmail}
                 </a>
               </li>
+              {showPhone ? (
+                <li className="flex items-center gap-3 group">
+                  <Phone className="h-5 w-5 text-primary/60 shrink-0 group-hover:text-primary transition-colors" />
+                  <a href={`tel:${contactPhone}`} className="text-muted-foreground hover:text-primary transition-colors text-sm">
+                    {contactPhone}
+                  </a>
+                </li>
+              ) : null}
               <li className="flex items-center gap-3 group">
                 <Globe className="h-5 w-5 text-primary/60 shrink-0 group-hover:text-primary transition-colors" />
                 <a

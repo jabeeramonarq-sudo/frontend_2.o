@@ -10,7 +10,7 @@ import { useContent } from "@/hooks/useContent";
 import { useSettings } from "@/hooks/useSettings";
 import api from "@/lib/api";
 import { Skeleton } from "@/components/ui/skeleton";
-import { Mail, MapPin, Send, CheckCircle } from "lucide-react";
+import { Mail, MapPin, Send, CheckCircle, Phone } from "lucide-react";
 import { toast } from "sonner";
 import { z } from "zod";
 import axios from "axios";
@@ -37,6 +37,8 @@ export default function ContactPage() {
   const fallbackEmail = "business@amonarq.com";
   const contactAddress = settings?.contactInfo?.address?.trim() || fallbackAddress;
   const contactEmail = settings?.contactInfo?.email?.trim() || fallbackEmail;
+  const contactPhone = settings?.contactInfo?.phone?.trim() || "";
+  const showPhone = settings?.featureFlags?.showPhoneNumber && contactPhone;
   const mapsUrl =
     settings?.contactInfo?.mapsUrl?.trim() ||
     `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(contactAddress)}`;
@@ -159,6 +161,20 @@ export default function ContactPage() {
                     </a>
                   </div>
                 </div>
+
+                {showPhone ? (
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                      <Phone className="h-5 w-5 text-primary" />
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-foreground mb-1">Phone</h3>
+                      <a href={`tel:${contactPhone}`} className="text-muted-foreground hover:text-primary transition-colors">
+                        {contactPhone}
+                      </a>
+                    </div>
+                  </div>
+                ) : null}
 
                 <div className="flex items-start gap-4">
                   <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
