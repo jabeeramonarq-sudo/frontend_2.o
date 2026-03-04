@@ -21,6 +21,11 @@ export interface Settings {
         badgeText: string;
         copyrightText: string;
     };
+    seo?: {
+        siteTitle?: string;
+        defaultDescription?: string;
+        ogImage?: string;
+    };
     socialMedia: Array<{
         platform: string;
         url: string;
@@ -53,6 +58,11 @@ const defaultSettings: Settings = {
         badgeText: "DPIIT Recognised Startup",
         copyrightText: "© {year} Amonarq Systems. All rights reserved."
     },
+    seo: {
+        siteTitle: "Amonarq - Designing Systems for Continuity",
+        defaultDescription: "Amonarq builds digital products focused on reducing chaos, protecting trust, and enabling uninterrupted human flow.",
+        ogImage: "/og-image.png"
+    },
     socialMedia: []
 };
 
@@ -83,6 +93,11 @@ export const useSettings = () => {
                         featureFlags: {
                             emailCaptureEnabled: response.data?.featureFlags?.emailCaptureEnabled ?? true,
                             showPhoneNumber: response.data?.featureFlags?.showPhoneNumber ?? false
+                        },
+                        seo: {
+                            siteTitle: response.data?.seo?.siteTitle || defaultSettings.seo?.siteTitle,
+                            defaultDescription: response.data?.seo?.defaultDescription || defaultSettings.seo?.defaultDescription,
+                            ogImage: response.data?.seo?.ogImage || defaultSettings.seo?.ogImage
                         }
                     };
                     cachedSettings = next;
